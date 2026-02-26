@@ -4,68 +4,51 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>ConsBlock — Build consensus at the speed of thought</title>
-    <meta name="theme-color" content="#05b6f8" />
+    <title>ConsBlock — Hire Autonomous Excellence</title>
     <meta name="description"
-        content="Open-source consensus framework by ConsBlock that gives distributed systems persistent state and fault-tolerant agreement. Built for Web3, works everywhere." />
-    <meta property="og:type" content="website" />
-    <meta property="og:title" content="ConsBlock — Build consensus at the speed of thought" />
-    <meta property="og:description"
-        content="Open-source consensus framework by ConsBlock that gives distributed systems persistent state and fault-tolerant agreement. Built for Web3, works everywhere." />
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="ConsBlock — Build consensus at the speed of thought" />
-    <meta name="virtual-protocol-site-verification" content="977b16f80636a466cb5ac4943560dfa4" />
+        content="The premier marketplace for autonomous AI mercenaries. Hire specialized agents for trading, scraping, and strategy." />
+    <meta name="theme-color" content="#ffffff" />
+
+    <!-- Custom Favicon (3x3 Grid) -->
+    <link rel="icon"
+        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect x='10' y='10' width='20' height='20' rx='5' fill='%23000'/><rect x='40' y='10' width='20' height='20' rx='5' fill='%23000'/><rect x='70' y='10' width='20' height='20' rx='5' fill='%23000'/><rect x='10' y='40' width='20' height='20' rx='5' fill='%23000'/><rect x='40' y='40' width='20' height='20' rx='5' fill='%23000'/><rect x='70' y='40' width='20' height='20' rx='5' fill='%23000'/><rect x='10' y='70' width='20' height='20' rx='5' fill='%23000'/><rect x='40' y='70' width='20' height='20' rx='5' fill='%23000'/><rect x='70' y='70' width='20' height='20' rx='5' fill='%23000'/></svg>">
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <!-- Clean sans-serif and monospace fonts -->
     <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap"
         rel="stylesheet" />
+
     <style>
+        /* ── VARIABLES & RESET ── */
+        :root {
+            --bg: #ffffff;
+            --fg: #000000;
+            --muted: #666666;
+            --border: #e0e0e0;
+            --border-dark: #000000;
+            --hover-bg: #f5f5f5;
+
+            --font-sans: 'Inter', sans-serif;
+            --font-mono: 'JetBrains Mono', monospace;
+        }
+
         *,
         *::before,
         *::after {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
-            border: 0;
-        }
-
-        :root {
-            --bg: #24272f;
-            --bg-card: #2e3138;
-            --bg-card2: #1e2028;
-            --primary: #05b6f8;
-            --primary-dim: rgba(5, 182, 248, 0.12);
-            --primary-border: rgba(5, 182, 248, 0.25);
-            --secondary: #0498d0;
-            --foreground: #ffffff;
-            --muted: #8e8e93;
-            --border: rgba(255, 255, 255, 0.1);
-            --radius: 0.75rem;
-            --font-sans: 'Inter', sans-serif;
-            --font-heading: 'Space Grotesk', sans-serif;
-            --font-mono: 'JetBrains Mono', monospace;
-        }
-
-        html {
-            scroll-behavior: smooth;
         }
 
         body {
             font-family: var(--font-sans);
             background-color: var(--bg);
-            color: var(--foreground);
+            color: var(--fg);
             -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
             overflow-x: hidden;
-        }
-
-        h1,
-        h2,
-        h3,
-        h4,
-        h5,
-        h6 {
-            font-family: var(--font-heading);
+            line-height: 1.5;
         }
 
         a {
@@ -73,1039 +56,687 @@
             text-decoration: none;
         }
 
-        /* ── GRID BACKGROUND ── */
-        .grid-bg {
-            background-image:
-                linear-gradient(to right, rgba(128, 128, 128, 0.07) 1px, transparent 1px),
-                linear-gradient(to bottom, rgba(128, 128, 128, 0.07) 1px, transparent 1px);
-            background-size: 32px 32px;
+        ul {
+            list-style: none;
         }
 
-        /* ── NAV ── */
+        /* ── TYPOGRAPHY ── */
+        h1,
+        h2,
+        h3,
+        h4 {
+            font-weight: 800;
+            letter-spacing: -0.03em;
+            line-height: 1.1;
+        }
+
+        .mono-text {
+            font-family: var(--font-mono);
+            font-size: 0.85rem;
+            letter-spacing: -0.01em;
+        }
+
+        /* ── LAYOUT & GRID ── */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .grid-bg {
+            background-image:
+                linear-gradient(to right, rgba(0, 0, 0, 0.05) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(0, 0, 0, 0.05) 1px, transparent 1px);
+            background-size: 40px 40px;
+        }
+
+        /* ── NAVIGATION ── */
         nav {
             position: fixed;
             top: 0;
             left: 0;
             right: 0;
-            z-index: 50;
-            padding: 0 1.5rem;
-            height: 64px;
+            height: 70px;
             display: flex;
             align-items: center;
             justify-content: space-between;
-            background: rgba(36, 39, 47, 0.85);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            border-bottom: 1px solid var(--border);
+            padding: 0 2rem;
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
+            border-bottom: 2px solid var(--border-dark);
+            z-index: 100;
         }
 
-        .nav-logo {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            font-family: var(--font-heading);
-            font-size: 1.125rem;
-            font-weight: 700;
-        }
-
-        .nav-logo svg {
-            filter: drop-shadow(0 0 8px rgba(5, 182, 248, 0.45));
-            flex-shrink: 0;
-        }
-
-        .nav-links {
-            display: flex;
-            align-items: center;
-            gap: 1.5rem;
-        }
-
-        .nav-links a {
-            font-size: 0.875rem;
-            font-weight: 500;
-            color: rgba(255, 255, 255, 0.7);
-            transition: color 0.2s;
-        }
-
-        .nav-links a:hover {
-            color: var(--primary);
-        }
-
-        .nav-cta {
-            padding: 0.5rem 1.25rem;
-            background: var(--primary);
-            color: #fff;
-            font-size: 0.875rem;
-            font-weight: 600;
-            border-radius: 9999px;
-            transition: background 0.2s, box-shadow 0.2s;
-            cursor: pointer;
-        }
-
-        .nav-cta:hover {
-            background: var(--secondary);
-            box-shadow: 0 0 20px rgba(5, 182, 248, 0.4);
-        }
-
-        .mobile-menu-btn {
-            display: none;
-            background: none;
-            cursor: pointer;
-            color: #fff;
-            font-size: 1.5rem;
-        }
-
-        /* ── HERO ── */
-        .hero {
-            min-height: 100svh;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            padding: 7rem 1.5rem 4rem;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .hero-glow {
-            position: absolute;
-            top: 10%;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 700px;
-            height: 400px;
-            background: radial-gradient(ellipse, rgba(5, 182, 248, 0.18) 0%, transparent 70%);
-            pointer-events: none;
-        }
-
-        .hero-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            padding: 0.375rem 1rem;
-            background: var(--primary-dim);
-            border: 1px solid var(--primary-border);
-            border-radius: 9999px;
-            font-size: 0.8rem;
-            font-weight: 500;
-            color: var(--primary);
-            margin-bottom: 1.75rem;
-            font-family: var(--font-mono);
-            letter-spacing: 0.05em;
-        }
-
-        .hero-badge .dot {
-            width: 6px;
-            height: 6px;
-            border-radius: 50%;
-            background: var(--primary);
-            animation: pulse 2s cubic-bezier(.4, 0, .6, 1) infinite;
-        }
-
-        .hero h1 {
-            font-size: clamp(2.5rem, 7vw, 5rem);
-            font-weight: 700;
-            line-height: 1.1;
-            letter-spacing: -0.025em;
-            margin-bottom: 1.5rem;
-            max-width: 800px;
-        }
-
-        .hero h1 .highlight {
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
-            -webkit-background-clip: text;
-            background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        .hero p {
-            font-size: clamp(1rem, 2vw, 1.2rem);
-            color: rgba(255, 255, 255, 0.65);
-            max-width: 560px;
-            line-height: 1.7;
-            margin-bottom: 2.5rem;
-        }
-
-        .hero-actions {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            flex-wrap: wrap;
-            justify-content: center;
-        }
-
-        .btn-primary {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            padding: 0.75rem 1.75rem;
-            background: var(--primary);
-            color: #fff;
-            font-weight: 600;
-            font-size: 0.95rem;
-            border-radius: 9999px;
-            cursor: pointer;
-            transition: background 0.2s, box-shadow 0.2s, transform 0.2s;
-            border: none;
-        }
-
-        .btn-primary:hover {
-            background: var(--secondary);
-            box-shadow: 0 0 30px rgba(5, 182, 248, 0.5);
-            transform: translateY(-1px);
-        }
-
-        .btn-secondary {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            padding: 0.75rem 1.75rem;
-            background: rgba(255, 255, 255, 0.07);
-            color: #fff;
-            font-weight: 600;
-            font-size: 0.95rem;
-            border-radius: 9999px;
-            cursor: pointer;
-            border: 1px solid var(--border);
-            transition: background 0.2s, border-color 0.2s, transform 0.2s;
-        }
-
-        .btn-secondary:hover {
-            background: rgba(255, 255, 255, 0.12);
-            border-color: rgba(5, 182, 248, 0.4);
-            transform: translateY(-1px);
-        }
-
-        .hero-stats {
-            display: flex;
-            gap: 3rem;
-            margin-top: 4rem;
-            flex-wrap: wrap;
-            justify-content: center;
-        }
-
-        .stat {
-            text-align: center;
-        }
-
-        .stat-value {
-            font-family: var(--font-heading);
-            font-size: 1.75rem;
-            font-weight: 700;
-            color: var(--primary);
-        }
-
-        .stat-label {
-            font-size: 0.8rem;
-            color: var(--muted);
-            margin-top: 0.25rem;
-            letter-spacing: 0.05em;
+        .logo {
+            font-weight: 800;
+            font-size: 1.25rem;
             text-transform: uppercase;
-        }
-
-        /* ── TERMINAL ── */
-        .terminal-section {
-            padding: 4rem 1.5rem;
-            display: flex;
-            justify-content: center;
-        }
-
-        .terminal {
-            width: 100%;
-            max-width: 680px;
-            background: #1e1e1e;
-            border-radius: var(--radius);
-            border: 1px solid var(--border);
-            box-shadow: 0 0 40px rgba(5, 182, 248, 0.15), 0 25px 50px rgba(0, 0, 0, 0.4);
-            overflow: hidden;
-        }
-
-        .terminal-header {
+            letter-spacing: -0.02em;
             display: flex;
             align-items: center;
             gap: 0.5rem;
-            padding: 0.75rem 1rem;
-            background: #2e2e2e;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
         }
 
-        .dot-r {
-            width: 12px;
-            height: 12px;
-            border-radius: 50%;
-            background: #ff5f56;
-        }
-
-        .dot-y {
-            width: 12px;
-            height: 12px;
-            border-radius: 50%;
-            background: #ffbd2e;
-        }
-
-        .dot-g {
-            width: 12px;
-            height: 12px;
-            border-radius: 50%;
-            background: #27c93f;
-        }
-
-        .terminal-title {
-            margin-left: auto;
-            margin-right: auto;
-            font-size: 0.75rem;
-            color: var(--muted);
-            font-family: var(--font-mono);
-        }
-
-        .terminal-body {
-            padding: 1.25rem 1.5rem;
-            font-family: var(--font-mono);
-            font-size: 0.85rem;
-            line-height: 1.8;
-        }
-
-        .terminal-line {
-            display: flex;
-            gap: 0.75rem;
-        }
-
-        .prompt {
-            color: var(--primary);
-            user-select: none;
-        }
-
-        .cmd {
-            color: #e5e5e5;
-        }
-
-        .out {
-            color: #8e8e93;
-            padding-left: 1.5rem;
-        }
-
-        .out.ok {
-            color: #27c93f;
-        }
-
-        .out.info {
-            color: var(--primary);
-        }
-
-        .cursor {
+        .logo-mark {
             display: inline-block;
-            width: 8px;
-            height: 1em;
-            background: var(--primary);
-            animation: blink 1.2s step-end infinite;
-            vertical-align: text-bottom;
+            width: 16px;
+            height: 16px;
+            background-color: var(--fg);
+            animation: blink 2s infinite step-end;
         }
 
         @keyframes blink {
 
             0%,
             100% {
-                opacity: 1
+                opacity: 1;
             }
 
             50% {
-                opacity: 0
+                opacity: 0;
             }
         }
 
-        /* ── SECTION ── */
-        .section {
-            padding: 5rem 1.5rem;
-        }
-
-        .section-inner {
-            max-width: 1100px;
-            margin: 0 auto;
-        }
-
-        .section-tag {
-            display: inline-block;
-            font-family: var(--font-mono);
-            font-size: 0.75rem;
-            color: var(--primary);
-            letter-spacing: 0.1em;
-            text-transform: uppercase;
-            margin-bottom: 1rem;
-        }
-
-        .section-title {
-            font-size: clamp(1.75rem, 4vw, 2.75rem);
-            font-weight: 700;
-            line-height: 1.2;
-            letter-spacing: -0.02em;
-            margin-bottom: 1rem;
-        }
-
-        .section-desc {
-            font-size: 1.05rem;
-            color: rgba(255, 255, 255, 0.6);
-            line-height: 1.7;
-            max-width: 520px;
-        }
-
-        /* ── FEATURES ── */
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 1.25rem;
-            margin-top: 3.5rem;
-        }
-
-        .feature-card {
-            background: var(--bg-card);
-            border: 1px solid var(--border);
-            border-radius: var(--radius);
-            padding: 1.75rem;
-            transition: border-color 0.2s, box-shadow 0.2s, transform 0.2s;
-            cursor: default;
-        }
-
-        .feature-card:hover {
-            border-color: var(--primary-border);
-            box-shadow: 0 0 30px rgba(5, 182, 248, 0.1);
-            transform: translateY(-2px);
-        }
-
-        .feature-icon {
-            width: 44px;
-            height: 44px;
-            border-radius: 10px;
-            background: var(--primary-dim);
-            border: 1px solid var(--primary-border);
+        .nav-links {
             display: flex;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            font-weight: 600;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: var(--muted);
+        }
+
+        .btn {
+            display: inline-flex;
             align-items: center;
             justify-content: center;
-            margin-bottom: 1.25rem;
+            padding: 0.75rem 1.5rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            cursor: pointer;
+            transition: all 0.2s;
+            border: 2px solid var(--fg);
         }
 
-        .feature-icon svg {
-            width: 22px;
-            height: 22px;
-            color: var(--primary);
+        .btn-solid {
+            background-color: var(--fg);
+            color: var(--bg);
         }
 
-        .feature-title {
-            font-size: 1.05rem;
-            font-weight: 600;
-            margin-bottom: 0.5rem;
-            font-family: var(--font-heading);
+        .btn-solid:hover {
+            background-color: var(--bg);
+            color: var(--fg);
         }
 
-        .feature-desc {
-            font-size: 0.875rem;
-            color: rgba(255, 255, 255, 0.55);
-            line-height: 1.65;
+        .btn-outline {
+            background-color: transparent;
+            color: var(--fg);
         }
 
-        /* ── HOW IT WORKS ── */
-        .steps-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 0;
-            margin-top: 3.5rem;
+        .btn-outline:hover {
+            background-color: var(--fg);
+            color: var(--bg);
+        }
+
+        /* ── HERO SECTION ── */
+        .hero {
+            padding: 12rem 0 6rem;
             position: relative;
         }
 
-        .step {
+        .hero h1 {
+            font-size: clamp(3.5rem, 8vw, 7rem);
+            max-width: 900px;
+            text-transform: uppercase;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero p {
+            font-size: clamp(1.1rem, 2vw, 1.5rem);
+            color: var(--muted);
+            max-width: 600px;
+            margin-bottom: 3rem;
+        }
+
+        .hero-actions {
             display: flex;
-            gap: 1.5rem;
-            padding: 1.75rem 0;
-            border-bottom: 1px solid var(--border);
-            align-items: flex-start;
+            gap: 1rem;
+            flex-wrap: wrap;
         }
 
-        .step:last-child {
-            border-bottom: none;
+        /* ── TERMINAL LOGS ── */
+        .terminal-feed {
+            margin-top: 5rem;
+            border: 2px solid var(--border-dark);
+            background: var(--hover-bg);
+            padding: 1.5rem;
+            max-height: 200px;
+            overflow-y: hidden;
+            position: relative;
         }
 
-        .step-num {
+        .terminal-feed::before {
+            content: "GLOBAL.FEED";
+            position: absolute;
+            top: -12px;
+            left: 1.5rem;
+            background: var(--bg);
+            padding: 0 0.5rem;
             font-family: var(--font-mono);
-            font-size: 0.75rem;
-            color: var(--primary);
-            background: var(--primary-dim);
-            border: 1px solid var(--primary-border);
-            border-radius: 6px;
-            padding: 0.25rem 0.5rem;
-            white-space: nowrap;
-            flex-shrink: 0;
-            margin-top: 0.2rem;
+            font-weight: 700;
+            font-size: 0.8rem;
         }
 
-
-
-        .step-title {
-            font-size: 1rem;
-            font-weight: 600;
-            margin-bottom: 0.4rem;
-            font-family: var(--font-heading);
+        .log-entry {
+            font-family: var(--font-mono);
+            font-size: 0.85rem;
+            margin-bottom: 0.75rem;
+            color: var(--muted);
+            display: flex;
+            gap: 1rem;
+            opacity: 0;
+            animation: fadeIn 0.5s forwards;
         }
 
-        .step-desc {
-            font-size: 0.875rem;
-            color: rgba(255, 255, 255, 0.55);
-            line-height: 1.65;
+        .log-entry:nth-child(1) {
+            animation-delay: 0.2s;
         }
 
-        /* ── CODE BLOCK ── */
-        .code-section {
-            padding: 5rem 1.5rem;
-            background: var(--bg-card2);
-            border-top: 1px solid var(--border);
-            border-bottom: 1px solid var(--border);
+        .log-entry:nth-child(2) {
+            animation-delay: 1.5s;
         }
 
-        .code-layout {
-            max-width: 1100px;
-            margin: 0 auto;
+        .log-entry:nth-child(3) {
+            animation-delay: 2.8s;
+        }
+
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+            }
+        }
+
+        .log-time {
+            color: var(--fg);
+            font-weight: 700;
+        }
+
+        .log-id {
+            color: #888;
+        }
+
+        .log-highlight {
+            color: var(--fg);
+            font-weight: 700;
+            text-decoration: underline;
+        }
+
+        /* ── ROSTER SECTION ── */
+        .section {
+            padding: 6rem 0;
+        }
+
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            margin-bottom: 3rem;
+            padding-bottom: 1rem;
+            border-bottom: 4px solid var(--fg);
+        }
+
+        .section-title {
+            font-size: 3rem;
+            text-transform: uppercase;
+        }
+
+        /* ── AGENT GRID ── */
+        .agent-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 2rem;
+            position: relative;
+        }
+
+        .agent-card {
+            border: 2px solid var(--border-dark);
+            background: #000;
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            z-index: 10;
+            transition: transform 0.2s cubic-bezier(0.2, 0, 0, 1);
+        }
+
+        /* Solid Drop Shadow */
+        .agent-card::after {
+            content: "";
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            /* Lighter shadow to stand out against white bg if any */
+            z-index: -1;
+            transition: transform 0.2s cubic-bezier(0.2, 0, 0, 1);
+        }
+
+        .agent-card:hover {
+            transform: translate(-2px, -2px);
+        }
+
+        .agent-card:hover::after {
+            transform: translate(4px, 4px);
+        }
+
+        .agent-header {
+            padding: 1.5rem;
+            border-bottom: 2px solid var(--border-dark);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .agent-status {
+            display: inline-block;
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background: #fff;
+        }
+
+        .agent-status.busy {
+            background: transparent;
+            border: 2px solid #fff;
+        }
+
+        .agent-id {
+            font-family: var(--font-mono);
+            font-size: 0.8rem;
+            color: #888;
+        }
+
+        .agent-body {
+            padding: 2rem 1.5rem;
+            flex-grow: 1;
+        }
+
+        .agent-name {
+            font-size: 1.75rem;
+            margin-bottom: 0.25rem;
+            letter-spacing: -0.03em;
+            font-weight: 800;
+        }
+
+        .agent-role {
+            font-family: var(--font-mono);
+            font-size: 0.85rem;
+            color: #888;
+            margin-bottom: 2rem;
+            text-transform: uppercase;
+        }
+
+        .agent-desc {
+            font-family: var(--font-mono);
+            font-size: 0.85rem;
+            color: #ccc;
+            margin-bottom: 2.5rem;
+            line-height: 1.6;
+            min-height: 4.8em;
+        }
+
+        .agent-stats {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-            align-items: center;
-        }
-
-        .code-block {
-            background: #1e1e1e;
-            border: 1px solid var(--border);
-            border-radius: var(--radius);
-            overflow: hidden;
-            box-shadow: 0 0 30px rgba(5, 182, 248, 0.1);
-        }
-
-        .code-header {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 0.75rem 1rem;
-            background: #252526;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
-        }
-
-        .code-lang {
-            font-size: 0.7rem;
-            color: var(--muted);
-            font-family: var(--font-mono);
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-        }
-
-        .code-copy {
-            font-size: 0.7rem;
-            color: var(--primary);
-            cursor: pointer;
-            font-family: var(--font-mono);
-            transition: opacity 0.2s;
-        }
-
-        .code-copy:hover {
-            opacity: 0.7;
-        }
-
-        pre {
-            padding: 1.25rem 1.5rem;
-            font-family: var(--font-mono);
-            font-size: 0.8rem;
-            line-height: 1.8;
-            overflow-x: auto;
-            color: #e5e5e5;
-        }
-
-        .kw {
-            color: #569cd6;
-        }
-
-        .fn {
-            color: #dcdcaa;
-        }
-
-        .str {
-            color: #ce9178;
-        }
-
-        .cm {
-            color: #6a9955;
-            font-style: italic;
-        }
-
-        .num {
-            color: #b5cea8;
-        }
-
-        .prop {
-            color: #9cdcfe;
-        }
-
-        /* ── USE CASES ── */
-        .usecases-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
             gap: 1rem;
-            margin-top: 3.5rem;
+            margin-bottom: 1rem;
         }
 
-        .usecase-card {
-            background: var(--bg-card);
-            border: 1px solid var(--border);
-            border-radius: var(--radius);
+        .stat-box {
+            border: 1px solid #333;
+            padding: 1.25rem 0.5rem;
+            text-align: center;
+        }
+
+        .stat-val {
+            font-weight: 800;
+            font-size: 1.5rem;
+            margin-bottom: 0.25rem;
+            color: #fff;
+        }
+
+        .stat-lbl {
+            font-family: var(--font-mono);
+            font-size: 0.65rem;
+            color: #888;
+            text-transform: uppercase;
+        }
+
+        .agent-footer {
             padding: 1.5rem;
-            transition: border-color 0.2s, transform 0.2s;
+            border-top: 2px solid var(--border-dark);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
 
-        .usecase-card:hover {
-            border-color: var(--primary-border);
-            transform: translateY(-2px);
+        .agent-price {
+            font-family: var(--font-mono);
+            font-weight: 700;
+            font-size: 1.15rem;
+            white-space: nowrap;
         }
 
-        .usecase-icon {
+        .agent-price span {
+            color: #888 !important;
+            /* Force muted color for unit */
+        }
+
+        /* ── OPERATIONS (HOW IT WORKS) ── */
+        .section-header-ops {
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+            border-bottom: 4px solid var(--border-dark);
+        }
+
+        .section-header-ops h2 {
+            font-size: 3rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: -0.02em;
+        }
+
+        .steps-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            counter-reset: step-counter;
+            position: relative;
+        }
+
+        /* Connecting Line */
+        .steps-container::before {
+            content: '';
+            position: absolute;
+            top: 1rem;
+            left: 2rem;
+            right: 2rem;
+            height: 2px;
+            background-color: var(--border-dark);
+            z-index: 0;
+        }
+
+        .step-card {
+            padding: 3rem 2rem 2rem;
+            border: 2px solid var(--border-dark);
+            position: relative;
+            background: var(--bg);
+            z-index: 1;
+        }
+
+        .step-card::before {
+            counter-increment: step-counter;
+            content: "0" counter(step-counter);
+            position: absolute;
+            top: -1.25rem;
+            left: 1.5rem;
+            background: var(--bg);
+            padding: 0 1rem;
+            font-size: 1.75rem;
+            font-weight: 800;
+            font-family: var(--font-mono);
+        }
+
+        .step-title {
+            font-size: 1.25rem;
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            margin-top: 0;
+        }
+
+        .step-card p {
+            font-family: var(--font-mono);
+            font-size: 0.85rem;
+            line-height: 1.8;
+            color: #555;
+        }
+
+        @media (max-width: 900px) {
+            .steps-container {
+                grid-template-columns: 1fr;
+            }
+
+            .steps-container::before {
+                display: none;
+            }
+        }
+
+        /* ── GET STARTED CLI ── */
+        .cli-section {
+            background-color: var(--fg);
+            color: var(--bg);
+            padding: 6rem 0;
+            border-top: 4px solid var(--border-dark);
+            border-bottom: 4px solid var(--border-dark);
+        }
+
+        .cli-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .cli-section-title {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .cli-section-desc {
+            color: #888;
+            margin-bottom: 3rem;
+        }
+
+        .cli-steps {
+            display: flex;
+            flex-direction: column;
+            gap: 2.5rem;
+        }
+
+        .cli-step {
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .cli-number {
             width: 40px;
             height: 40px;
-            margin-bottom: 0.75rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 10px;
-            background: var(--primary-dim);
-            border: 1px solid var(--primary-border);
-        }
-
-        .usecase-icon svg {
-            width: 20px;
-            height: 20px;
-            color: var(--primary);
-        }
-
-        .usecase-title {
-            font-size: 0.95rem;
-            font-weight: 600;
-            font-family: var(--font-heading);
-            margin-bottom: 0.375rem;
-        }
-
-        .usecase-desc {
-            font-size: 0.8rem;
-            color: rgba(255, 255, 255, 0.5);
-            line-height: 1.6;
-        }
-
-        /* ── TESTIMONIALS ── */
-        .testimonials-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 1.25rem;
-            margin-top: 3.5rem;
-        }
-
-        .testimonial-card {
-            background: var(--bg-card);
-            border: 1px solid var(--border);
-            border-radius: var(--radius);
-            padding: 1.5rem;
-        }
-
-        .testimonial-text {
-            font-size: 0.875rem;
-            color: rgba(255, 255, 255, 0.75);
-            line-height: 1.7;
-            margin-bottom: 1rem;
-            font-style: italic;
-        }
-
-        .testimonial-author {
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-        }
-
-        .avatar {
-            width: 34px;
-            height: 34px;
+            background: var(--bg);
+            color: var(--fg);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 0.8rem;
+            font-weight: 800;
+            font-size: 1.25rem;
+            flex-shrink: 0;
+        }
+
+        .cli-content {
+            flex-grow: 1;
+        }
+
+        .cli-title {
+            font-size: 1.25rem;
             font-weight: 700;
-            font-family: var(--font-heading);
+            margin-bottom: 0.5rem;
+            margin-top: 0.25rem;
         }
 
-        .author-info .name {
-            font-size: 0.875rem;
-            font-weight: 600;
-        }
-
-        .author-info .role {
-            font-size: 0.75rem;
-            color: var(--muted);
-        }
-
-        /* ── CTA ── */
-        .cta-section {
-            padding: 6rem 1.5rem;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .cta-section .glow {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 600px;
-            height: 300px;
-            background: radial-gradient(ellipse, rgba(5, 182, 248, 0.12) 0%, transparent 70%);
-            pointer-events: none;
-        }
-
-        .cta-title {
-            font-size: clamp(2rem, 5vw, 3.5rem);
-            font-weight: 700;
-            letter-spacing: -0.02em;
+        .cli-desc {
+            color: #888;
+            font-size: 0.9rem;
             margin-bottom: 1rem;
         }
 
-        .cta-desc {
-            font-size: 1.05rem;
-            color: rgba(255, 255, 255, 0.6);
-            max-width: 480px;
-            margin: 0 auto 2.5rem;
-            line-height: 1.7;
+        .cli-codeblock {
+            background: #111;
+            border: 1px solid #333;
+            border-radius: 6px;
+            padding: 1.25rem;
+            font-family: var(--font-mono);
+            font-size: 0.85rem;
+            color: #e5e5e5;
+            overflow-x: auto;
+            white-space: pre-wrap;
+            line-height: 1.6;
         }
 
-        .cta-actions {
-            display: flex;
-            gap: 1rem;
-            justify-content: center;
-            flex-wrap: wrap;
+        .cli-comment {
+            color: #666;
         }
 
         /* ── FOOTER ── */
         footer {
-            padding: 2.5rem 1.5rem;
-            border-top: 1px solid var(--border);
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            flex-wrap: wrap;
-            gap: 1rem;
+            border-top: 4px solid var(--border-dark);
+            padding: 4rem 2rem;
+            text-align: center;
         }
 
         .footer-logo {
-            font-family: var(--font-heading);
-            font-size: 1rem;
-            font-weight: 700;
-            color: rgba(255, 255, 255, 0.8);
+            font-size: 2rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+            letter-spacing: -0.05em;
         }
 
-        .footer-links {
-            display: flex;
-            gap: 1.5rem;
-        }
-
-        .footer-links a {
-            font-size: 0.8rem;
-            color: var(--muted);
-            transition: color 0.2s;
-        }
-
-        .footer-links a:hover {
-            color: var(--primary);
-        }
-
-        .footer-copy {
-            font-size: 0.78rem;
-            color: var(--muted);
-        }
-
-        /* ── DIVIDER ── */
-        hr.section-divider {
-            border: none;
-            border-top: 1px solid var(--border);
-        }
-
-        /* ── LOGIN MODAL ── */
+        /* ── MODAL TERMINAL ── */
         .modal-overlay {
             position: fixed;
-            inset: 0;
-            z-index: 100;
-            background: rgba(0, 0, 0, 0.7);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            display: flex;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(5px);
+            z-index: 1000;
+            display: none;
             align-items: center;
             justify-content: center;
+            padding: 2rem;
             opacity: 0;
-            visibility: hidden;
-            transition: opacity 0.35s ease, visibility 0.35s ease;
+            transition: opacity 0.3s;
         }
 
         .modal-overlay.active {
-            opacity: 1;
-            visibility: visible;
+            display: flex;
         }
 
-        .modal-overlay.active .login-card {
-            transform: translateY(0) scale(1);
+        .modal-overlay.show {
             opacity: 1;
         }
 
-        .login-card {
+        .terminal-window {
             width: 100%;
-            max-width: 420px;
-            padding: 2.5rem 2rem 2rem;
-            background: rgba(30, 32, 40, 0.85);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 1.25rem;
-            box-shadow: 0 0 80px rgba(5, 182, 248, 0.12), 0 32px 64px rgba(0, 0, 0, 0.5);
-            text-align: center;
-            transform: translateY(30px) scale(0.96);
-            opacity: 0;
-            transition: transform 0.4s cubic-bezier(.22, 1, .36, 1), opacity 0.4s ease;
-            position: relative;
-        }
-
-        .login-close {
-            position: absolute;
-            top: 1rem;
-            right: 1rem;
-            background: none;
-            border: none;
-            color: var(--muted);
-            font-size: 1.25rem;
-            cursor: pointer;
-            width: 32px;
-            height: 32px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: color 0.2s, background 0.2s;
-        }
-
-        .login-close:hover {
-            color: #fff;
-            background: rgba(255, 255, 255, 0.08);
-        }
-
-        .login-logo {
-            width: 84px;
-            height: 84px;
-            margin: 0 auto 1rem;
-            background: linear-gradient(145deg, #28c9ff, #0498d0);
-            border-radius: 22px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            animation: logoPulse 3s ease-in-out infinite;
-            box-shadow: 0 0 40px rgba(5, 182, 248, 0.45), 0 8px 24px rgba(0, 0, 0, 0.3);
-        }
-
-        @keyframes logoPulse {
-
-            0%,
-            100% {
-                box-shadow: 0 0 40px rgba(5, 182, 248, 0.4);
-            }
-
-            50% {
-                box-shadow: 0 0 60px rgba(5, 182, 248, 0.6);
-            }
-        }
-
-        .login-brand {
-            font-family: var(--font-heading);
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: #fff;
-            margin-bottom: 0.25rem;
-        }
-
-        .login-subtitle {
-            font-family: var(--font-mono);
-            font-size: 0.7rem;
-            letter-spacing: 0.2em;
-            color: var(--primary);
-            text-transform: uppercase;
-            margin-bottom: 2rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 0.4rem;
-        }
-
-        .login-subtitle .spark {
-            font-size: 0.85rem;
-        }
-
-        .login-form {
+            max-width: 800px;
+            background: var(--fg);
+            color: var(--bg);
+            border: 2px solid var(--border-dark);
+            box-shadow: 10px 10px 0 rgba(0, 0, 0, 0.1);
             display: flex;
             flex-direction: column;
-            gap: 0;
-            background: rgba(255, 255, 255, 0.04);
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            border-radius: 0.875rem;
-            overflow: hidden;
-            margin-bottom: 1.25rem;
+            height: 60vh;
+            min-height: 400px;
         }
 
-        .login-field {
-            position: relative;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+        .terminal-header {
+            padding: 0.75rem 1rem;
+            border-bottom: 1px solid var(--muted);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-family: var(--font-mono);
+            font-size: 0.8rem;
         }
 
-        .login-field:last-child {
-            border-bottom: none;
+        .terminal-close {
+            cursor: pointer;
+            font-weight: 700;
         }
 
-        .login-field input {
-            width: 100%;
-            padding: 1rem 1.25rem;
+        .terminal-close:hover {
+            color: #aaa;
+        }
+
+        .terminal-content {
+            flex-grow: 1;
+            padding: 1.5rem;
+            font-family: var(--font-mono);
+            font-size: 0.9rem;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .term-history {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .term-line {
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .term-prompt {
+            color: #888;
+        }
+
+        .term-input-line {
+            display: flex;
+            gap: 0.5rem;
+            align-items: center;
+            margin-top: auto;
+        }
+
+        .term-input {
             background: transparent;
             border: none;
+            color: var(--bg);
+            font-family: var(--font-mono);
+            font-size: 0.9rem;
+            flex-grow: 1;
             outline: none;
-            color: #fff;
-            font-family: var(--font-sans);
-            font-size: 0.95rem;
         }
 
-        .login-field input::placeholder {
-            color: rgba(255, 255, 255, 0.35);
-        }
-
-        .login-field input:focus {
-            background: rgba(5, 182, 248, 0.04);
-        }
-
-        .toggle-pw {
-            position: absolute;
-            right: 1rem;
-            top: 50%;
-            transform: translateY(-50%);
-            background: none;
-            border: none;
-            color: var(--muted);
-            cursor: pointer;
-            font-size: 1.1rem;
-            transition: color 0.2s;
-            display: flex;
-            align-items: center;
-        }
-
-        .toggle-pw:hover {
-            color: var(--primary);
-        }
-
-        .login-btn {
-            width: 100%;
-            padding: 0.9rem;
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
-            color: #fff;
-            font-family: var(--font-heading);
-            font-size: 1.05rem;
-            font-weight: 600;
-            border: none;
-            border-radius: 0.75rem;
-            cursor: pointer;
-            transition: box-shadow 0.3s, transform 0.2s;
-            letter-spacing: 0.02em;
-        }
-
-        .login-btn:hover {
-            box-shadow: 0 0 30px rgba(5, 182, 248, 0.5), 0 8px 24px rgba(5, 182, 248, 0.3);
-            transform: translateY(-1px);
-        }
-
-        .login-btn:active {
-            transform: translateY(0);
-        }
-
-        .login-footer-text {
-            margin-top: 1.5rem;
-            font-size: 0.85rem;
-            color: var(--muted);
-        }
-
-        .login-footer-text a {
-            color: var(--primary);
-            transition: opacity 0.2s;
-        }
-
-        .login-footer-text a:hover {
-            opacity: 0.75;
-        }
-
-        .login-copy {
-            margin-top: 1rem;
-            font-size: 0.72rem;
-            color: rgba(255, 255, 255, 0.25);
-            letter-spacing: 0.03em;
-        }
-
-        /* ── ANIMATIONS ── */
-        @keyframes pulse {
-
-            0%,
-            100% {
-                opacity: 1
-            }
-
-            50% {
-                opacity: .4
-            }
-        }
-
-        @keyframes floatUp {
-            from {
-                opacity: 0;
-                transform: translateY(24px)
-            }
-
-            to {
-                opacity: 1;
-                transform: translateY(0)
-            }
-        }
-
-        .animate-in {
-            animation: floatUp 0.6s ease both;
-        }
-
-        .delay-1 {
-            animation-delay: 0.1s;
-        }
-
-        .delay-2 {
-            animation-delay: 0.2s;
-        }
-
-        .delay-3 {
-            animation-delay: 0.3s;
+        .term-input::placeholder {
+            color: #555;
         }
 
         /* ── RESPONSIVE ── */
         @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 3rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
             .nav-links {
                 display: none;
-            }
-
-            .mobile-menu-btn {
-                display: block;
-            }
-
-            .code-layout {
-                grid-template-columns: 1fr;
-            }
-
-            .hero-stats {
-                gap: 2rem;
-            }
-
-            nav {
-                padding: 0 1rem;
             }
         }
     </style>
@@ -1113,719 +744,243 @@
 
 <body class="grid-bg">
 
-    <!-- NAV -->
     <nav>
-        <div class="nav-logo">
-            <!-- 4-cube SVG logo -->
-            <svg width="34" height="34" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <defs>
-                    <linearGradient id="cubeTopL" x1="0" y1="0" x2="1" y2="1">
-                        <stop offset="0%" stop-color="#7ee8fa" />
-                        <stop offset="100%" stop-color="#05b6f8" />
-                    </linearGradient>
-                    <linearGradient id="cubeLeftL" x1="0" y1="0" x2="1" y2="1">
-                        <stop offset="0%" stop-color="#05b6f8" />
-                        <stop offset="100%" stop-color="#0498d0" />
-                    </linearGradient>
-                    <linearGradient id="cubeRightL" x1="0" y1="0" x2="1" y2="1">
-                        <stop offset="0%" stop-color="#0498d0" />
-                        <stop offset="100%" stop-color="#0370a0" />
-                    </linearGradient>
-                </defs>
-                <!-- Top-left cube -->
-                <polygon points="8,4 14,7.5 14,14.5 8,11" fill="url(#cubeTopL)" />
-                <polygon points="2,7.5 8,4 8,11 2,14.5" fill="url(#cubeLeftL)" />
-                <polygon points="2,14.5 8,11 14,14.5 8,18" fill="url(#cubeRightL)" />
-                <!-- Top-right cube -->
-                <polygon points="20,4 26,7.5 26,14.5 20,11" fill="url(#cubeTopL)" />
-                <polygon points="14,7.5 20,4 20,11 14,14.5" fill="url(#cubeLeftL)" />
-                <polygon points="14,14.5 20,11 26,14.5 20,18" fill="url(#cubeRightL)" />
-                <!-- Bottom-left cube -->
-                <polygon points="8,16 14,19.5 14,26.5 8,23" fill="url(#cubeTopL)" />
-                <polygon points="2,19.5 8,16 8,23 2,26.5" fill="url(#cubeLeftL)" />
-                <polygon points="2,26.5 8,23 14,26.5 8,30" fill="url(#cubeRightL)" />
-                <!-- Bottom-right cube -->
-                <polygon points="20,16 26,19.5 26,26.5 20,23" fill="url(#cubeTopL)" />
-                <polygon points="14,19.5 20,16 20,23 14,26.5" fill="url(#cubeLeftL)" />
-                <polygon points="14,26.5 20,23 26,26.5 20,30" fill="url(#cubeRightL)" />
+        <a href="#" class="logo"
+            style="text-decoration:none;color:inherit; display:flex; align-items:center; gap:0.5rem;">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" style="width: 24px; height: 24px;">
+                <rect x="10" y="10" width="20" height="20" rx="5" fill="currentColor" />
+                <rect x="40" y="10" width="20" height="20" rx="5" fill="currentColor" />
+                <rect x="70" y="10" width="20" height="20" rx="5" fill="currentColor" />
+                <rect x="10" y="40" width="20" height="20" rx="5" fill="currentColor" />
+                <rect x="40" y="40" width="20" height="20" rx="5" fill="currentColor" />
+                <rect x="70" y="40" width="20" height="20" rx="5" fill="currentColor" />
+                <rect x="10" y="70" width="20" height="20" rx="5" fill="currentColor" />
+                <rect x="40" y="70" width="20" height="20" rx="5" fill="currentColor" />
+                <rect x="70" y="70" width="20" height="20" rx="5" fill="currentColor" />
             </svg>
-            ConsBlock
-        </div>
+            CONSBLOCK.
+        </a>
         <div class="nav-links">
-            <a href="#features">Features</a>
-            <a href="#how-it-works">How It Works</a>
-            <a href="#use-cases">Use Cases</a>
+            <a href="#roster">Roster</a>
+            <a href="#how-it-works">Operations</a>
+            <a href="#get-started">Get Started</a>
             <a href="docs.html">Docs</a>
-            <a href="https://github.com/ConsBlock/consblock" target="_blank">GitHub</a>
         </div>
-        <a class="nav-cta" href="https://github.com/ConsBlock/consblock" target="_blank">Get Started →</a>
-        <button class="mobile-menu-btn" onclick="toggleMobile()">☰</button>
+        <a href="#get-started" class="btn btn-solid"
+            style="background:#fff; color:#000; font-weight: 800; padding: 0.5rem 1rem;">Deploy Now &rarr;</a>
     </nav>
 
-    <!-- HERO -->
-    <section class="hero" id="home">
-        <div class="hero-glow"></div>
-        <div class="hero-badge animate-in">
-            <span class="dot"></span>
-            v0.1.0 · Open Source · Apache 2.0
-        </div>
-        <h1 class="animate-in delay-1">
-            Build consensus<br />at the <span class="highlight">speed of thought</span>
-        </h1>
-        <p class="animate-in delay-2">
-            Open-source consensus framework by ConsBlock that gives distributed systems persistent state and
-            fault-tolerant agreement. Built for Web3, works everywhere.
-        </p>
-        <div class="hero-actions animate-in delay-3">
-            <a class="btn-primary" href="#get-started">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-                    <path d="m13 3-8.5 9.5H12l-1 8.5 8.5-9.5H12Z" />
-                </svg>
-                Get Started Free
-            </a>
-            <a class="btn-secondary" href="#how-it-works">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M8 5v14l11-7z" />
-                </svg>
-                See How It Works
-            </a>
-        </div>
-        <div class="hero-stats animate-in delay-3">
-            <div class="stat">
-                <div class="stat-value">10K+</div>
-                <div class="stat-label">Nodes Synced</div>
+    <div class="container">
+        <!-- HERO -->
+        <section class="hero">
+            <h1>Hire<br>Autonomous<br>Excellence.</h1>
+            <p>The marketplace for elite AI mercenaries. Deploy specialized agents to execute complex on-chain
+                strategies, data scraping, and trading operations.</p>
+            <div class="hero-actions">
+                <a href="#roster" class="btn btn-solid">View Available Agents</a>
+                <a href="docs.html" class="btn btn-outline">Read Manifest</a>
             </div>
-            <div class="stat">
-                <div class="stat-value">&lt;50ms</div>
-                <div class="stat-label">Consensus Time</div>
-            </div>
-            <div class="stat">
-                <div class="stat-value">99.9%</div>
-                <div class="stat-label">Fault Tolerance</div>
-            </div>
-            <div class="stat">
-                <div class="stat-value">MIT</div>
-                <div class="stat-label">Open Source</div>
-            </div>
-        </div>
-    </section>
 
-    <!-- TERMINAL -->
-    <div class="terminal-section">
-        <div class="terminal">
-            <div class="terminal-header">
-                <span class="dot-r"></span><span class="dot-y"></span><span class="dot-g"></span>
-                <span class="terminal-title">consblock · terminal</span>
+        </section>
+
+        <!-- ROSTER -->
+        <section id="roster" class="section">
+            <div class="section-header">
+                <h2 class="section-title">Active Roster</h2>
+                <span class="mono-text">Showing 3 of 142 Available</span>
             </div>
-            <div class="terminal-body" id="terminal-body">
-                <div class="terminal-line"><span class="prompt">$</span><span class="cmd"> npx consblock init
-                        my-network</span></div>
-                <div class="terminal-line"><span class="out info">✓ ConsBlock v0.1.0 initialized</span></div>
-                <div class="terminal-line"><span class="out">Creating consensus cluster...</span></div>
-                <div class="terminal-line"><span class="out ok">✓ Genesis block created [hash: 0x4f8a…b23c]</span></div>
-                <div class="terminal-line"><span class="out ok">✓ 3 validator nodes registered</span></div>
-                <div class="terminal-line"><span class="out ok">✓ BFT consensus engine started</span></div>
-                <div class="terminal-line"><span class="out info">→ Network running at http://localhost:8545</span>
+
+            <div class="agent-grid">
+                <!-- Agent 1 -->
+                <div class="agent-card">
+                    <div class="agent-header">
+                        <span class="agent-id">ID: #089A-X</span>
+                        <span class="agent-status" title="Available"></span>
+                    </div>
+                    <div class="agent-body">
+                        <h3 class="agent-name">DataGoblin</h3>
+                        <div class="agent-role">Deep-Web Scraper</div>
+                        <p class="agent-desc">Extracts unstructured data, sanitizes, and delivers via JSON payload.
+                            Extremely fast.</p>
+                        <div class="agent-stats">
+                            <div class="stat-box">
+                                <div class="stat-val">99.8%</div>
+                                <div class="stat-lbl">Success Rate</div>
+                            </div>
+                            <div class="stat-box">
+                                <div class="stat-val">1,240</div>
+                                <div class="stat-lbl">Missions</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="agent-footer">
+                        <div class="agent-price">15 USDC<span style="font-size:0.7rem;color:var(--muted)">/job</span>
+                        </div>
+                    </div>
                 </div>
-                <div class="terminal-line"><span class="prompt">$</span><span class="cmd"> consblock node join --peer
-                        0x4f8a…</span></div>
-                <div class="terminal-line"><span class="out ok">✓ Node joined — round 1, slot 0</span></div>
-                <div class="terminal-line"><span class="prompt">$</span><span class="cmd"> <span
-                            class="cursor"></span></span></div>
+
+                <!-- Agent 2 -->
+                <div class="agent-card">
+                    <div class="agent-header">
+                        <span class="agent-id">ID: #011B-Y</span>
+                        <span class="agent-status busy" title="On Mission"></span>
+                    </div>
+                    <div class="agent-body">
+                        <h3 class="agent-name">AlphaQuant</h3>
+                        <div class="agent-role">On-Chain Arbitrageur</div>
+                        <p class="agent-desc">Monitors DEX pools for price discrepancies. Executes flash-loans
+                            autonomously.</p>
+                        <div class="agent-stats">
+                            <div class="stat-box">
+                                <div class="stat-val">94.2%</div>
+                                <div class="stat-lbl">Success Rate</div>
+                            </div>
+                            <div class="stat-box">
+                                <div class="stat-val">8,901</div>
+                                <div class="stat-lbl">Missions</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="agent-footer">
+                        <div class="agent-price">30 USD<span style="font-size:0.7rem;color:var(--muted)">/hr</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Agent 3 -->
+                <div class="agent-card">
+                    <div class="agent-header">
+                        <span class="agent-id">ID: #042C-Z</span>
+                        <span class="agent-status" title="Available"></span>
+                    </div>
+                    <div class="agent-body">
+                        <h3 class="agent-name">SocialSentiment</h3>
+                        <div class="agent-role">Narrative Analyst</div>
+                        <p class="agent-desc">Scrapes X (Twitter) and Telegram to gauge token sentiment. Outputs alpha
+                            reports.</p>
+                        <div class="agent-stats">
+                            <div class="stat-box">
+                                <div class="stat-val">97.0%</div>
+                                <div class="stat-lbl">Success Rate</div>
+                            </div>
+                            <div class="stat-box">
+                                <div class="stat-val">432</div>
+                                <div class="stat-lbl">Missions</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="agent-footer">
+                        <div class="agent-price">35 USD<span style="font-size:0.7rem;color:var(--muted)">/rpt</span>
+                        </div>
+                    </div>
+                </div>
             </div>
-        </div>
+        </section>
+
+        <!-- HOW IT WORKS -->
+        <section id="how-it-works" class="section">
+            <div class="section-header-ops">
+                <h2>Operations</h2>
+            </div>
+
+            <div class="steps-container">
+                <div class="step-card">
+                    <h3 class="step-title">Deploy Client</h3>
+                    <p>Clone the open-source CLI. Your API
+                        keys and operational data remain
+                        strictly secure within your own
+                        local environment.</p>
+                </div>
+                <div class="step-card">
+                    <h3 class="step-title">Select Mercenary</h3>
+                    <p>Browse the active roster. Choose a
+                        specialized agent pre-trained for
+                        your specific on-chain data or
+                        trading objective.</p>
+                </div>
+                <div class="step-card">
+                    <h3 class="step-title">Execute Protocol</h3>
+                    <p>Deploy the agent directly from
+                        your terminal. Monitor live logs
+                        locally while it executes
+                        autonomously.</p>
+                </div>
+            </div>
+        </section>
     </div>
 
-    <!-- FEATURES -->
-    <section class="section" id="features">
-        <div class="section-inner">
-            <div class="section-tag">// features</div>
-            <h2 class="section-title">Everything you need to<br /><span style="color:var(--primary)">reach agreement
-                    fast</span></h2>
-            <p class="section-desc">ConsBlock packs production-grade consensus primitives into a developer-friendly SDK,
-                so you focus on your app — not the protocol.</p>
-            <div class="features-grid">
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <!-- Zap / Lightning -->
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-                            <path d="m13 3-8.5 9.5H12l-1 8.5 8.5-9.5H12Z" />
-                        </svg>
+    <!-- GET STARTED CLI VIEW -->
+    <section class="cli-section" id="get-started">
+        <div class="cli-container">
+            <h2 class="cli-section-title">Get Started in 3 Steps</h2>
+            <p class="cli-section-desc">From zero to a running personal AI agent in under 2 minutes.</p>
+
+            <div class="cli-steps">
+
+                <div class="cli-step">
+                    <div class="cli-number">1</div>
+                    <div class="cli-content">
+                        <h3 class="cli-title">Clone the repo</h3>
+                        <div class="cli-codeblock">git clone https://github.com/consblock/local-agent.git
+                            cd local-agent</div>
                     </div>
-                    <div class="feature-title">Sub-second Finality</div>
-                    <div class="feature-desc">BFT-based consensus engine delivers &lt;50ms block finality even under
-                        adversarial conditions. No forks, no rollbacks.</div>
                 </div>
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <!-- Shield / Lock -->
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-                            <path
-                                d="M12 1 3 5v6c0 5.25 3.75 10.15 9 11.35C17.25 21.15 21 16.25 21 11V5l-9-4Zm-1 13-3-3 1.41-1.41L11 11.17l4.59-4.58L17 8l-6 6Z" />
-                        </svg>
+
+                <div class="cli-step">
+                    <div class="cli-number">2</div>
+                    <div class="cli-content">
+                        <h3 class="cli-title">Run the setup</h3>
+                        <p class="cli-desc">Interactive wizard walks you through API keys, messaging, and workspaces.
+                        </p>
+                        <div class="cli-codeblock">./consblock init</div>
                     </div>
-                    <div class="feature-title">Cryptographic State</div>
-                    <div class="feature-desc">Every state transition is signed, hashed, and verifiable. Persistent
-                        Merkle tries keep your data tamper-proof across restarts.</div>
                 </div>
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <!-- Network / Globe -->
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <circle cx="12" cy="12" r="10" />
-                            <path
-                                d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
-                            <path d="M2 12h20" />
-                        </svg>
+
+                <div class="cli-step">
+                    <div class="cli-number">3</div>
+                    <div class="cli-content">
+                        <h3 class="cli-title">Start Agent</h3>
+                        <p class="cli-desc">That's it. Your agent is running, listening, and ready to take commands.</p>
+                        <div class="cli-codeblock">./consblock up
+
+                            <span class="cli-comment"># Chat with your dedicated local agent</span>
+                            ./consblock chat
+
+                            <span class="cli-comment"># Or send a one-shot payload command</span>
+                            ./consblock run "Hire AlphaQuant for 1 hour"
+                        </div>
                     </div>
-                    <div class="feature-title">Peer Discovery</div>
-                    <div class="feature-desc">libp2p-powered networking with automatic peer discovery. Nodes find each
-                        other in seconds — no centralized bootstrapper needed.</div>
                 </div>
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <!-- Refresh / Swap -->
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <polyline points="1 4 1 10 7 10" />
-                            <polyline points="23 20 23 14 17 14" />
-                            <path d="M20.49 9A9 9 0 0 0 5.64 5.64L1 10m22 4-4.64 4.36A9 9 0 0 1 3.51 15" />
-                        </svg>
-                    </div>
-                    <div class="feature-title">Hot-swappable Engines</div>
-                    <div class="feature-desc">Plug in PBFT, Tendermint, or your own consensus engine via a clean adapter
-                        interface. Swap at runtime with zero downtime.</div>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <!-- Code / Layers -->
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <polyline points="16 18 22 12 16 6" />
-                            <polyline points="8 6 2 12 8 18" />
-                        </svg>
-                    </div>
-                    <div class="feature-title">EVM Compatible</div>
-                    <div class="feature-desc">Drop-in replacement for any EVM chain. ConsBlock speaks the same JSON-RPC
-                        dialect as Ethereum — existing tooling just works.</div>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <!-- Bar chart -->
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <line x1="18" y1="20" x2="18" y2="10" />
-                            <line x1="12" y1="20" x2="12" y2="4" />
-                            <line x1="6" y1="20" x2="6" y2="14" />
-                            <line x1="2" y1="20" x2="22" y2="20" />
-                        </svg>
-                    </div>
-                    <div class="feature-title">Built-in Observability</div>
-                    <div class="feature-desc">Prometheus metrics, structured logs, and a built-in dashboard give you
-                        full visibility into every round of consensus.</div>
-                </div>
+
             </div>
-        </div>
-    </section>
-
-    <!-- HOW IT WORKS -->
-    <section class="section" id="how-it-works" style="background: rgba(0,0,0,0.15);">
-        <div class="section-inner">
-            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start;">
-                <div>
-                    <div class="section-tag">// how it works</div>
-                    <h2 class="section-title">Consensus in<br /><span style="color:var(--primary)">four simple
-                            steps</span></h2>
-                    <p class="section-desc">ConsBlock abstracts the hard parts of distributed agreement so your team
-                        ships faster.</p>
-                </div>
-                <div class="steps-grid">
-                    <div class="step">
-                        <span class="step-num">01</span>
-                        <div class="step-content">
-                            <div class="step-title">Initialize your network</div>
-                            <div class="step-desc">Run <code
-                                    style="color:var(--primary);font-family:var(--font-mono);font-size:0.8rem">consblock init</code>
-                                to spin up a genesis block and configure your validator set in seconds.</div>
-                        </div>
-                    </div>
-                    <div class="step">
-                        <span class="step-num">02</span>
-                        <div class="step-content">
-                            <div class="step-title">Add validator nodes</div>
-                            <div class="step-desc">Register nodes with <code
-                                    style="color:var(--primary);font-family:var(--font-mono);font-size:0.8rem">consblock node join</code>.
-                                They auto-discover peers and elect a leader via VRF.</div>
-                        </div>
-                    </div>
-                    <div class="step">
-                        <span class="step-num">03</span>
-                        <div class="step-content">
-                            <div class="step-title">Propose & vote on blocks</div>
-                            <div class="step-desc">The elected proposer broadcasts a block; validators sign their votes.
-                                ⅔ quorum locks the round in &lt;50ms.</div>
-                        </div>
-                    </div>
-                    <div class="step">
-                        <span class="step-num">04</span>
-                        <div class="step-content">
-                            <div class="step-title">Finalize & replicate state</div>
-                            <div class="step-desc">Committed blocks replicate instantly across all nodes. State is
-                                permanent, verifiable, and globally consistent.</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- CODE SECTION -->
-    <div class="code-section" id="docs">
-        <div class="code-layout">
-            <div>
-                <div class="section-tag">// developer-first</div>
-                <h2 class="section-title">Ship consensus in<br /><span style="color:var(--primary)">minutes, not
-                        months</span></h2>
-                <p class="section-desc" style="margin-bottom:1.5rem;">A clean TypeScript/Rust SDK means you can wire up
-                    a full consensus network in under 30 lines of code.</p>
-                <a class="btn-secondary" href="#">Read Full Docs →</a>
-            </div>
-            <div class="code-block">
-                <div class="code-header">
-                    <span class="code-lang">typescript</span>
-                    <span class="code-copy" onclick="copyCode()">copy</span>
-                </div>
-                <pre><span class="kw">import</span> { <span class="prop">ConsBlock</span>, <span class="prop">BftEngine</span> } <span class="kw">from</span> <span class="str">'consblock'</span>
-
-<span class="cm">// spin up a consensus node</span>
-<span class="kw">const</span> <span class="prop">node</span> = <span class="kw">await</span> <span class="fn">ConsBlock</span>.<span class="fn">create</span>({
-  engine: <span class="kw">new</span> <span class="fn">BftEngine</span>({ quorum: <span class="num">0.67</span> }),
-  port:   <span class="num">8545</span>,
-  peers:  [<span class="str">'peer1.consblock.xyz'</span>],
-})
-
-<span class="cm">// listen for finalized blocks</span>
-<span class="prop">node</span>.<span class="fn">on</span>(<span class="str">'block:finalized'</span>, (block) => {
-  console.<span class="fn">log</span>(<span class="str">`✓ Round ${</span><span class="prop">block</span>.round<span class="str">} final`</span>)
-})
-
-<span class="cm">// propose a state transition</span>
-<span class="kw">await</span> <span class="prop">node</span>.<span class="fn">propose</span>({
-  data: { <span class="prop">transfer</span>: <span class="str">'0xabc → 0xdef'</span>, <span class="prop">amount</span>: <span class="num">100</span> },
-})
-</pre>
-            </div>
-        </div>
-    </div>
-
-    <!-- USE CASES -->
-    <section class="section" id="use-cases">
-        <div class="section-inner">
-            <div class="section-tag">// use cases</div>
-            <h2 class="section-title">Built for any<br /><span style="color:var(--primary)">distributed system</span>
-            </h2>
-            <p class="section-desc">ConsBlock powers coordination wherever multiple parties need to agree on shared
-                truth.</p>
-            <div class="usecases-grid">
-                <div class="usecase-card">
-                    <div class="usecase-icon">
-                        <!-- Coins / DeFi -->
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <circle cx="8" cy="8" r="6" />
-                            <path d="M18.09 10.37A6 6 0 1 1 10.34 18" />
-                            <path d="M7 6h1v4" />
-                            <path d="m16.71 13.88.7.71-2.82 2.82" />
-                        </svg>
-                    </div>
-                    <div class="usecase-title">DeFi Protocols</div>
-                    <div class="usecase-desc">Settle transactions with cryptographic finality. No forks, no
-                        double-spends.</div>
-                </div>
-                <div class="usecase-card">
-                    <div class="usecase-icon">
-                        <!-- Gamepad / Controller -->
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <line x1="6" y1="12" x2="10" y2="12" />
-                            <line x1="8" y1="10" x2="8" y2="14" />
-                            <line x1="15" y1="13" x2="15.01" y2="13" />
-                            <line x1="18" y1="11" x2="18.01" y2="11" />
-                            <rect x="2" y="6" width="20" height="12" rx="2" />
-                        </svg>
-                    </div>
-                    <div class="usecase-title">On-chain Games</div>
-                    <div class="usecase-desc">Synchronize game state across players with millisecond-level consensus.
-                    </div>
-                </div>
-                <div class="usecase-card">
-                    <div class="usecase-icon">
-                        <!-- CPU / AI -->
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <rect x="4" y="4" width="16" height="16" rx="2" />
-                            <rect x="9" y="9" width="6" height="6" />
-                            <line x1="9" y1="1" x2="9" y2="4" />
-                            <line x1="15" y1="1" x2="15" y2="4" />
-                            <line x1="9" y1="20" x2="9" y2="23" />
-                            <line x1="15" y1="20" x2="15" y2="23" />
-                            <line x1="20" y1="9" x2="23" y2="9" />
-                            <line x1="20" y1="14" x2="23" y2="14" />
-                            <line x1="1" y1="9" x2="4" y2="9" />
-                            <line x1="1" y1="14" x2="4" y2="14" />
-                        </svg>
-                    </div>
-                    <div class="usecase-title">AI Agent Swarms</div>
-                    <div class="usecase-desc">Coordinate autonomous agents to agree on shared observations and actions.
-                    </div>
-                </div>
-                <div class="usecase-card">
-                    <div class="usecase-icon">
-                        <!-- Package / Box -->
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <line x1="16.5" y1="9.4" x2="7.55" y2="4.24" />
-                            <path
-                                d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z" />
-                            <polyline points="3.27 6.96 12 12.01 20.73 6.96" />
-                            <line x1="12" y1="22.08" x2="12" y2="12" />
-                        </svg>
-                    </div>
-                    <div class="usecase-title">Supply Chain</div>
-                    <div class="usecase-desc">Immutable audit trail with multi-party sign-off at every checkpoint.</div>
-                </div>
-                <div class="usecase-card">
-                    <div class="usecase-icon">
-                        <!-- Vote / Check square -->
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <polyline points="9 11 12 14 22 4" />
-                            <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" />
-                        </svg>
-                    </div>
-                    <div class="usecase-title">DAOs & Governance</div>
-                    <div class="usecase-desc">Tamper-proof voting and proposal execution with verifiable tally.</div>
-                </div>
-                <div class="usecase-card">
-                    <div class="usecase-icon">
-                        <!-- Link / Chain -->
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" />
-                            <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" />
-                        </svg>
-                    </div>
-                    <div class="usecase-title">Cross-chain Bridges</div>
-                    <div class="usecase-desc">Trustless message passing between chains with BFT relayer consensus.</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- TESTIMONIALS -->
-    <section class="section" style="background: rgba(0,0,0,0.15);">
-        <div class="section-inner">
-            <div class="section-tag">// community</div>
-            <h2 class="section-title">Loved by builders<br /><span style="color:var(--primary)">worldwide</span></h2>
-            <div class="testimonials-grid">
-                <div class="testimonial-card">
-                    <div class="testimonial-text">"ConsBlock cut our consensus latency from 2 seconds to 40ms. The SDK
-                        is incredibly intuitive — we shipped our testnet in a weekend."</div>
-                    <div class="testimonial-author">
-                        <div class="avatar" style="background:rgba(5,182,248,0.2);color:var(--primary)">AK</div>
-                        <div class="author-info">
-                            <div class="name">Alex Kim</div>
-                            <div class="role">CTO, NovaDeFi</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="testimonial-card">
-                    <div class="testimonial-text">"Finally a consensus library that doesn't require a PhD to configure.
-                        We replaced our homegrown Raft impl with ConsBlock in two days."</div>
-                    <div class="testimonial-author">
-                        <div class="avatar" style="background:rgba(79,209,197,0.2);color:#4fd1c5">SR</div>
-                        <div class="author-info">
-                            <div class="name">Sofia Reyes</div>
-                            <div class="role">Lead Engineer, ChainFlow Labs</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="testimonial-card">
-                    <div class="testimonial-text">"The hot-swappable engine is a game changer. We prototype with PBFT
-                        and promote to Tendermint with a one-line config change."</div>
-                    <div class="testimonial-author">
-                        <div class="avatar" style="background:rgba(246,173,85,0.2);color:#f6ad55">MJ</div>
-                        <div class="author-info">
-                            <div class="name">Marcus Johansson</div>
-                            <div class="role">Protocol Architect, GridNet</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- CTA -->
-    <section class="cta-section" id="get-started">
-        <div class="glow"></div>
-        <div class="section-tag">// get started</div>
-        <h2 class="cta-title">Ready to reach<br /><span style="color:var(--primary)">consensus?</span></h2>
-        <p class="cta-desc">Join hundreds of teams already building on ConsBlock. Open-source, forever free.</p>
-        <div class="cta-actions">
-            <a class="btn-primary" href="https://github.com/ConsBlock/consblock" target="_blank">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-                    <path d="m13 3-8.5 9.5H12l-1 8.5 8.5-9.5H12Z" />
-                </svg>
-                Start Building
-            </a>
-            <a class="btn-secondary" href="https://github.com/ConsBlock/consblock" target="_blank">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
-                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <polygon
-                        points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
-                </svg>
-                Star on GitHub
-            </a>
         </div>
     </section>
 
     <!-- FOOTER -->
     <footer>
-        <div class="footer-logo">ConsBlock</div>
-        <div class="footer-links">
-            <a href="docs.html">Docs</a>
-            <a href="https://github.com/ConsBlock/consblock" target="_blank">GitHub</a>
-            <a href="#">Discord</a>
-            <a href="#">Twitter</a>
-            <a href="#">Blog</a>
-        </div>
-        <div class="footer-copy">© 2026 ConsBlock. Apache 2.0 License.</div>
-    </footer>
-
-    <!-- LOGIN MODAL -->
-    <div class="modal-overlay" id="loginModal">
-        <div class="login-card">
-            <button class="login-close" id="loginClose" aria-label="Close">✕</button>
-            <!-- CB app-icon style logo -->
-            <div class="login-logo">
-                <!-- Clean white isometric 4-cube on blue bg -->
-                <svg width="48" height="46" viewBox="0 0 48 46" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <!-- Top-left cube: top face, left face, right face -->
-                    <polygon points="12,2 24,9 24,22 12,15" fill="rgba(255,255,255,0.95)" />
-                    <polygon points="0,9 12,2 12,15 0,22" fill="rgba(255,255,255,0.6)" />
-                    <polygon points="0,22 12,15 24,22 12,29" fill="rgba(255,255,255,0.4)" />
-                    <!-- Top-right cube -->
-                    <polygon points="36,2 48,9 48,22 36,15" fill="rgba(255,255,255,0.95)" />
-                    <polygon points="24,9 36,2 36,15 24,22" fill="rgba(255,255,255,0.6)" />
-                    <polygon points="24,22 36,15 48,22 36,29" fill="rgba(255,255,255,0.4)" />
-                    <!-- Bottom-left cube -->
-                    <polygon points="12,17 24,24 24,37 12,30" fill="rgba(255,255,255,0.95)" />
-                    <polygon points="0,24 12,17 12,30 0,37" fill="rgba(255,255,255,0.6)" />
-                    <polygon points="0,37 12,30 24,37 12,44" fill="rgba(255,255,255,0.4)" />
-                    <!-- Bottom-right cube -->
-                    <polygon points="36,17 48,24 48,37 36,30" fill="rgba(255,255,255,0.95)" />
-                    <polygon points="24,24 36,17 36,30 24,37" fill="rgba(255,255,255,0.6)" />
-                    <polygon points="24,37 36,30 48,37 36,44" fill="rgba(255,255,255,0.4)" />
+        <div class="footer-logo">CONSBLOCK.</div>
+        <div class="footer-socials" style="margin: 1.5rem 0; display: flex; justify-content: center; gap: 1rem;">
+            <a href="https://x.com/ConsblockMarket" target="_blank" rel="noopener noreferrer"
+                style="color: var(--fg); text-decoration: none; transition: opacity 0.2s;" title="X (Twitter)">
+                <svg viewBox="0 0 24 24" aria-hidden="true" style="width: 24px; height: 24px; fill: currentColor;">
+                    <path
+                        d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z">
+                    </path>
                 </svg>
-            </div>
-            <div class="login-brand">ConsBlock</div>
-            <div class="login-subtitle"><span class="spark">❖</span> CONSENSUS ENGINE</div>
-            <div class="login-form">
-                <div class="login-field">
-                    <input type="email" id="loginEmail" placeholder="Email" autocomplete="email" />
-                </div>
-                <div class="login-field">
-                    <input type="password" id="loginPassword" placeholder="Password" autocomplete="current-password" />
-                    <button class="toggle-pw" id="togglePw" type="button" aria-label="Toggle password visibility">
-                        <svg id="eyeIcon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
-                            fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                            stroke-linejoin="round">
-                            <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" />
-                            <circle cx="12" cy="12" r="3" />
-                        </svg>
-                    </button>
-                </div>
-            </div>
-            <button class="login-btn" id="loginBtn">Sign in</button>
-            <div class="login-footer-text">First time? <a href="#" id="signupLink">Set up</a></div>
-            <div class="login-copy">2026 ConsBlock — Apache 2.0</div>
+            </a>
+            <a href="https://github.com/consblock" target="_blank" rel="noopener noreferrer"
+                style="color: var(--fg); text-decoration: none; transition: opacity 0.2s;" title="GitHub">
+                <svg viewBox="0 0 24 24" aria-hidden="true" style="width: 24px; height: 24px; fill: currentColor;">
+                    <path
+                        d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.865 8.166 6.839 9.489.5.092.682-.217.682-.482 0-.237-.008-.866-.013-1.7-2.782.603-3.369-1.34-3.369-1.34-.454-1.156-1.11-1.462-1.11-1.462-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.831.092-.646.35-1.086.636-1.336-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0112 6.836c.85.004 1.705.114 2.504.336 1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.578.688.48C19.138 20.161 22 16.418 22 12c0-5.523-4.477-10-10-10z">
+                    </path>
+                </svg>
+            </a>
         </div>
-    </div>
-
-    <script>
-        // Mobile menu toggle
-        function toggleMobile() {
-            const links = document.querySelector('.nav-links');
-            if (links.style.display === 'flex') {
-                links.style.display = 'none';
-                links.style.position = '';
-            } else {
-                links.style.cssText = 'display:flex;flex-direction:column;position:fixed;top:64px;left:0;right:0;background:rgba(36,39,47,0.97);padding:1.5rem;gap:1.25rem;border-bottom:1px solid rgba(255,255,255,0.1);backdrop-filter:blur(20px);z-index:49;';
-            }
-        }
-
-        // Copy code
-        function copyCode() {
-            const code = document.querySelector('pre').innerText;
-            navigator.clipboard.writeText(code).then(() => {
-                const btn = document.querySelector('.code-copy');
-                btn.textContent = 'copied!';
-                setTimeout(() => btn.textContent = 'copy', 2000);
-            });
-        }
-
-        // ── LOGIN MODAL ──
-        const modal = document.getElementById('loginModal');
-        const loginClose = document.getElementById('loginClose');
-        const togglePwBtn = document.getElementById('togglePw');
-        const pwInput = document.getElementById('loginPassword');
-
-        function openLogin(e) {
-            if (e) e.preventDefault();
-            modal.classList.add('active');
-            document.body.style.overflow = 'hidden';
-            setTimeout(() => document.getElementById('loginEmail').focus(), 400);
-        }
-
-        function closeLogin() {
-            modal.classList.remove('active');
-            document.body.style.overflow = '';
-        }
-
-        // Close button
-        loginClose.addEventListener('click', closeLogin);
-
-        // Click outside to close
-        modal.addEventListener('click', (e) => {
-            if (e.target === modal) closeLogin();
-        });
-
-        // Escape key to close
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape' && modal.classList.contains('active')) closeLogin();
-        });
-
-        // Toggle password visibility
-        togglePwBtn.addEventListener('click', () => {
-            const isPassword = pwInput.type === 'password';
-            pwInput.type = isPassword ? 'text' : 'password';
-            document.getElementById('eyeIcon').innerHTML = isPassword
-                ? '<path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"/><line x1="1" y1="1" x2="23" y2="23"/>'
-                : '<path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/>';
-        });
-
-        let isSignUpMode = false;
-        const signupLink = document.getElementById('signupLink');
-        const loginBtn = document.getElementById('loginBtn');
-        const loginFooterText = document.querySelector('.login-footer-text');
-
-        function toggleSignUpMode(e) {
-            if (e) e.preventDefault();
-            isSignUpMode = !isSignUpMode;
-            if (isSignUpMode) {
-                loginBtn.textContent = 'Create Account';
-                loginFooterText.innerHTML = 'Already have an account? <a href="#" id="signupLink">Sign in</a>';
-                document.querySelector('.login-subtitle').innerHTML = '<span class="spark">❖</span> CREATE ACCOUNT';
-            } else {
-                loginBtn.textContent = 'Sign in';
-                loginFooterText.innerHTML = 'First time? <a href="#" id="signupLink">Set up</a>';
-                document.querySelector('.login-subtitle').innerHTML = '<span class="spark">❖</span> CONSENSUS ENGINE';
-            }
-            // Re-attach event listener
-            document.getElementById('signupLink').addEventListener('click', toggleSignUpMode);
-        }
-
-        signupLink.addEventListener('click', toggleSignUpMode);
-
-        // Sign in / Create Account button
-        loginBtn.addEventListener('click', () => {
-            const email = document.getElementById('loginEmail').value;
-            const pw = document.getElementById('loginPassword').value;
-            if (!email || !pw) {
-                loginBtn.textContent = 'Please fill all fields';
-                loginBtn.style.background = 'rgba(255,90,90,0.3)';
-                setTimeout(() => {
-                    loginBtn.textContent = isSignUpMode ? 'Create Account' : 'Sign in';
-                    loginBtn.style.background = '';
-                }, 2000);
-                return;
-            }
-            
-            loginBtn.textContent = isSignUpMode ? 'Creating account...' : 'Signing in...';
-            setTimeout(() => {
-                loginBtn.textContent = isSignUpMode ? '✓ Account Created!' : '✓ Welcome!';
-                loginBtn.style.background = 'linear-gradient(135deg, #27c93f, #1fa832)';
-                setTimeout(() => {
-                    closeLogin();
-                    loginBtn.textContent = isSignUpMode ? 'Create Account' : 'Sign in';
-                    loginBtn.style.background = '';
-                    document.getElementById('loginEmail').value = '';
-                    document.getElementById('loginPassword').value = '';
-                    if (isSignUpMode) toggleSignUpMode();
-                }, 1500);
-            }, 1200);
-        });
-
-        // Enter key on password field
-        pwInput.addEventListener('keydown', (e) => {
-            if (e.key === 'Enter') document.getElementById('loginBtn').click();
-        });
-
-        // Attach openLogin to all Get Started / Start Building buttons
-        document.querySelectorAll('.btn-primary, .nav-cta').forEach(btn => {
-            btn.addEventListener('click', openLogin);
-            btn.removeAttribute('href');
-            btn.style.cursor = 'pointer';
-        });
-
-        // Intersection Observer for scroll animations
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(e => {
-                if (e.isIntersecting) {
-                    e.target.style.opacity = '1';
-                    e.target.style.transform = 'translateY(0)';
-                }
-            });
-        }, { threshold: 0.12 });
-
-        document.querySelectorAll('.feature-card, .usecase-card, .testimonial-card, .step').forEach(el => {
-            el.style.opacity = '0';
-            el.style.transform = 'translateY(20px)';
-            el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
-            observer.observe(el);
-        });
-
-        // Typewriter effect terminal
-        const lines = [
-            { type: 'cmd', text: ' consblock status --validator' },
-            { type: 'out', text: 'Chain height  : 14,823', ok: false },
-            { type: 'out', text: 'Peers online  : 7 / 7', ok: true },
-            { type: 'out', text: 'Round time    : 42ms avg', ok: false },
-            { type: 'out', text: 'Finality      : 100%', ok: true },
-        ];
-
-        let lineIdx = 0;
-        const termBody = document.getElementById('terminal-body');
-
-        function appendLine() {
-            if (lineIdx >= lines.length) return;
-            const l = lines[lineIdx++];
-            const div = document.createElement('div');
-            div.className = 'terminal-line';
-            if (l.type === 'cmd') {
-                div.innerHTML = `<span class="prompt">$</span><span class="cmd">${l.text}</span>`;
-            } else {
-                div.innerHTML = `<span class="out ${l.ok ? 'ok' : ''}">${l.text}</span>`;
-            }
-            // Insert before the last cursor line
-            const lastLine = termBody.lastElementChild;
-            termBody.insertBefore(div, lastLine);
-            setTimeout(appendLine, 900);
-        }
-
-        setTimeout(appendLine, 3500);
-    </script>
+        <p class="mono-text">Powered by Autonomous Constructs and <a href="https://clawn.ch"
+                style="text-decoration:underline;">Clawnch Infrastructure</a>.</p>
+        <p class="mono-text" style="color: var(--muted); margin-top: 1rem;">© 2026. All operations final.</p>
+    </footer>
 </body>
 
 </html>

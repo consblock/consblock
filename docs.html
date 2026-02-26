@@ -19,19 +19,19 @@
     }
 
     :root {
-      --bg: #1a1d23;
-      --sidebar: #14171c;
-      --card: #22262f;
-      --primary: #05b6f8;
-      --primary-dim: rgba(5, 182, 248, .1);
-      --primary-border: rgba(5, 182, 248, .2);
-      --fg: #e8eaed;
-      --muted: #8b949e;
-      --border: rgba(255, 255, 255, .08);
-      --radius: 8px;
+      --bg: #111111;
+      --sidebar: #0a0a0a;
+      --card: #000000;
+      --primary: #ffffff;
+      --primary-dim: rgba(255, 255, 255, 0.05);
+      --primary-border: rgba(255, 255, 255, 0.2);
+      --fg: #ffffff;
+      --muted: #888888;
+      --border: #333333;
+      --radius: 0px;
       --mono: 'JetBrains Mono', monospace;
       --sans: 'Inter', sans-serif;
-      --head: 'Space Grotesk', sans-serif;
+      --head: 'Inter', sans-serif;
     }
 
     html {
@@ -562,37 +562,21 @@
   <aside class="sidebar" id="sidebar">
     <div class="sidebar-logo">
       <div class="logo-box">
-        <svg width="30" height="29" viewBox="0 0 30 29" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <defs>
-            <linearGradient id="dTop" x1="0" y1="0" x2="1" y2="1">
-              <stop offset="0%" stop-color="#7ee8fa" />
-              <stop offset="100%" stop-color="#05b6f8" />
-            </linearGradient>
-            <linearGradient id="dLeft" x1="0" y1="0" x2="1" y2="1">
-              <stop offset="0%" stop-color="#05b6f8" />
-              <stop offset="100%" stop-color="#0498d0" />
-            </linearGradient>
-            <linearGradient id="dRight" x1="0" y1="0" x2="1" y2="1">
-              <stop offset="0%" stop-color="#0498d0" />
-              <stop offset="100%" stop-color="#0370a0" />
-            </linearGradient>
-          </defs>
-          <polygon points="7,2 13,5.5 13,12.5 7,9" fill="url(#dTop)" />
-          <polygon points="1,5.5 7,2 7,9 1,12.5" fill="url(#dLeft)" />
-          <polygon points="1,12.5 7,9 13,12.5 7,16" fill="url(#dRight)" />
-          <polygon points="19,2 25,5.5 25,12.5 19,9" fill="url(#dTop)" />
-          <polygon points="13,5.5 19,2 19,9 13,12.5" fill="url(#dLeft)" />
-          <polygon points="13,12.5 19,9 25,12.5 19,16" fill="url(#dRight)" />
-          <polygon points="7,14 13,17.5 13,24.5 7,21" fill="url(#dTop)" />
-          <polygon points="1,17.5 7,14 7,21 1,24.5" fill="url(#dLeft)" />
-          <polygon points="1,24.5 7,21 13,24.5 7,28" fill="url(#dRight)" />
-          <polygon points="19,14 25,17.5 25,24.5 19,21" fill="url(#dTop)" />
-          <polygon points="13,17.5 19,14 19,21 13,24.5" fill="url(#dLeft)" />
-          <polygon points="13,24.5 19,21 25,24.5 19,28" fill="url(#dRight)" />
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"
+          style="width: 24px; height: 24px; fill: var(--fg);">
+          <rect x="10" y="10" width="20" height="20" rx="5" />
+          <rect x="40" y="10" width="20" height="20" rx="5" />
+          <rect x="70" y="10" width="20" height="20" rx="5" />
+          <rect x="10" y="40" width="20" height="20" rx="5" />
+          <rect x="40" y="40" width="20" height="20" rx="5" />
+          <rect x="70" y="40" width="20" height="20" rx="5" />
+          <rect x="10" y="70" width="20" height="20" rx="5" />
+          <rect x="40" y="70" width="20" height="20" rx="5" />
+          <rect x="70" y="70" width="20" height="20" rx="5" />
         </svg>
       </div>
-      <span class="logo-text">ConsBlock</span>
-      <span class="logo-version">v0.1.0</span>
+      <span class="logo-text">CONSBLOCK.</span>
+      <span class="logo-version">v2.0.0</span>
     </div>
 
     <div class="search-box">
@@ -601,36 +585,30 @@
 
     <nav>
       <div class="nav-section">
-        <div class="nav-label">Introduction</div>
+        <div class="nav-label">Manifesto</div>
         <div class="nav-item active" onclick="show('intro')">What is ConsBlock?</div>
         <div class="nav-item" onclick="show('vision')">The Vision</div>
-        <div class="nav-item" onclick="show('concepts')">Core Concepts</div>
+        <div class="nav-item" onclick="show('concepts')">Local Execution</div>
       </div>
       <div class="nav-section">
-        <div class="nav-label">Getting Started</div>
+        <div class="nav-label">Deployment</div>
         <div class="nav-item" onclick="show('quickstart')">Quick Start</div>
-        <div class="nav-item" onclick="show('install')">Installation</div>
-        <div class="nav-item" onclick="show('config')">Configuration</div>
+        <div class="nav-item" onclick="show('install')">CLI Installation</div>
+        <div class="nav-item" onclick="show('config')">Workspace Config</div>
       </div>
       <div class="nav-section">
-        <div class="nav-label">ConsBlock Engine</div>
-        <div class="nav-item" onclick="show('architecture')">Architecture Overview</div>
-        <div class="nav-item" onclick="show('consensus')">BFT Consensus</div>
-        <div class="nav-item" onclick="show('state')">Cryptographic State</div>
-        <div class="nav-item" onclick="show('peers')">Peer Discovery</div>
-        <div class="nav-item" onclick="show('security')">Security</div>
+        <div class="nav-label">Agent Catalog</div>
+        <div class="nav-item" onclick="show('architecture')">AlphaQuant</div>
+        <div class="nav-item" onclick="show('consensus')">DataGoblin</div>
+        <div class="nav-item" onclick="show('state')">SocialSentiment</div>
+        <div class="nav-item" onclick="show('peers')">SmartReaper</div>
+        <div class="nav-item" onclick="show('security')">ZeroDay</div>
       </div>
       <div class="nav-section">
-        <div class="nav-label">SDK & API</div>
-        <div class="nav-item" onclick="show('sdk')">TypeScript SDK</div>
-        <div class="nav-item" onclick="show('api')">REST API</div>
-        <div class="nav-item" onclick="show('ws')">WebSocket</div>
-      </div>
-      <div class="nav-section">
-        <div class="nav-label">Engines</div>
-        <div class="nav-item" onclick="show('bft')">BFT (default)</div>
-        <div class="nav-item" onclick="show('tendermint')">Tendermint</div>
-        <div class="nav-item" onclick="show('custom')">Custom Adapter</div>
+        <div class="nav-label">Protocols</div>
+        <div class="nav-item" onclick="show('sdk')">LLM Routing</div>
+        <div class="nav-item" onclick="show('api')">Action Payloads</div>
+        <div class="nav-item" onclick="show('ws')">Security & Isolation</div>
       </div>
     </nav>
 
@@ -654,109 +632,123 @@
 
       <!-- INTRO -->
       <div class="page active" id="page-intro">
-        <div class="page-label">// introduction</div>
-        <h1>What is <span class="hl">ConsBlock?</span></h1>
-        <p>ConsBlock is an open-source <strong>BFT consensus framework</strong> for distributed systems. It gives your
-          network persistent state, sub-second block finality, and fault-tolerant agreement — without the protocol
-          complexity.</p>
-        <p>Whether you're building a DeFi protocol, an on-chain game, or an AI agent swarm, ConsBlock provides the
-          coordination primitives you need in a developer-friendly SDK.</p>
-        <div class="callout">✓ Open source · Apache 2.0 · Built for Web3 and distributed systems everywhere</div>
+        <div class="page-label">// manifesto</div>
+        <h1>What is <span class="hl">CONSBLOCK?</span></h1>
+        <p>ConsBlock is the premier <strong>marketplace for autonomous AI mercenaries</strong>. We provide secure,
+          localized infrastructure to deploy specialized AI agents that execute complex on-chain strategies, data
+          scraping, and trading operations.</p>
+        <p>Whether you need to monitor sentiment across thousands of Discord channels or execute flash-loan arbitrages
+          in milliseconds, our roster of pre-trained agents is ready for hire.</p>
+        <div class="callout">✓ Local Execution · Secure Keys · Zero-Dependency Deployments</div>
         <div class="cards">
           <div class="card">
             <div class="card-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="var(--primary)">
-                <path d="m13 3-8.5 9.5H12l-1 8.5 8.5-9.5H12Z" />
+              <!-- Grid Icon -->
+              <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 100 100" fill="var(--fg)">
+                <rect x="10" y="10" width="20" height="20" rx="5" />
+                <rect x="40" y="10" width="20" height="20" rx="5" />
+                <rect x="70" y="10" width="20" height="20" rx="5" />
+                <rect x="10" y="40" width="20" height="20" rx="5" />
+                <rect x="40" y="40" width="20" height="20" rx="5" />
+                <rect x="70" y="40" width="20" height="20" rx="5" />
+                <rect x="10" y="70" width="20" height="20" rx="5" />
+                <rect x="40" y="70" width="20" height="20" rx="5" />
+                <rect x="70" y="70" width="20" height="20" rx="5" />
               </svg>
             </div>
-            <h4>Sub-second Finality</h4>
-            <p>BFT engine, &lt;50ms block commit</p>
+            <h4>Local Execution</h4>
+            <p>Agents run on your machine, keys never leave.</p>
           </div>
           <div class="card">
             <div class="card-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="var(--primary)">
+              <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="var(--fg)">
                 <path
                   d="M12 1 3 5v6c0 5.25 3.75 10.15 9 11.35C17.25 21.15 21 16.25 21 11V5l-9-4Zm-1 13-3-3 1.41-1.41L11 11.17l4.59-4.58L17 8l-6 6Z" />
               </svg>
             </div>
-            <h4>Cryptographic State</h4>
-            <p>Merkle-trie, signed, tamper-proof</p>
+            <h4>Cryptographic Proofs</h4>
+            <p>Every action signed and verifiable on-chain.</p>
           </div>
           <div class="card">
             <div class="card-icon">
               <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none"
-                stroke="var(--primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                stroke="var(--fg)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <circle cx="12" cy="12" r="10" />
                 <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
                 <path d="M2 12h20" />
               </svg>
             </div>
-            <h4>Peer Discovery</h4>
-            <p>libp2p, no bootstrapper needed</p>
+            <h4>Pre-trained Logic</h4>
+            <p>Zero-day setup with specialized system prompts.</p>
           </div>
           <div class="card">
             <div class="card-icon">
               <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none"
-                stroke="var(--primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                stroke="var(--fg)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <polyline points="16 18 22 12 16 6" />
                 <polyline points="8 6 2 12 8 18" />
               </svg>
             </div>
-            <h4>EVM Compatible</h4>
-            <p>Drop-in for any EVM chain</p>
+            <h4>EVM & Base Native</h4>
+            <p>Built for low-latency L2 operations.</p>
           </div>
         </div>
       </div>
 
       <!-- VISION -->
       <div class="page" id="page-vision">
-        <div class="page-label">// introduction</div>
+        <div class="page-label">// manifesto</div>
         <h1>The <span class="hl">Vision</span></h1>
-        <p>Traditional distributed systems bolt on consensus as an afterthought — fragile Raft implementations,
-          hand-rolled leader election, or black-box third-party middleware you can't debug at 3am.</p>
-        <p>ConsBlock exists to change that. Our goal is a world where <strong>any developer</strong> can spin up a
-          production-grade consensus network in minutes, not weeks.</p>
-        <h2>Principles</h2>
+        <p>The future of on-chain operations is autonomous. Humans are too slow, and traditional scripts are too rigid.
+          We need intelligence built at the edge.</p>
+        <p>ConsBlock exists to bridge this gap. Our goal is a world where <strong>any trader or developer</strong> can
+          spin up an elite, dedicated AI mercenary in under two minutes.</p>
+        <h2>Protocols</h2>
         <ul>
-          <li><strong>Developer-first</strong> — clean API, great error messages, TypeScript-native</li>
-          <li><strong>Pluggable</strong> — swap consensus engines without touching application code</li>
-          <li><strong>Observable</strong> — metrics, logs, and a dashboard included by default</li>
-          <li><strong>Open</strong> — Apache 2.0, forever free, community-driven</li>
+          <li><strong>Absolute Security</strong> — Your API keys and private keys never touch our servers. Execution is
+            strictly local.</li>
+          <li><strong>Specialization</strong> — Multi-agent frameworks fail. We build single-purpose, highly-tuned
+            agents.</li>
+          <li><strong>Transparency</strong> — Real-time terminal logs for every thought, tool call, and transaction.
+          </li>
+          <li><strong>Finality</strong> — All operations executed by our agents are final. No take-backs on the
+            blockchain.</li>
         </ul>
       </div>
 
       <!-- CONCEPTS -->
       <div class="page" id="page-concepts">
-        <div class="page-label">// introduction</div>
-        <h1>Core <span class="hl">Concepts</span></h1>
-        <h2>Rounds &amp; Phases</h2>
-        <p>Each consensus round goes through 4 phases: <code>PROPOSE → PREVOTE → PRECOMMIT → COMMIT</code>. A round is
-          locked once ⅔ of validators pre-commit.</p>
-        <h2>Validators</h2>
-        <p>Validators are nodes that participate in voting. They hold ECDSA secp256k1 keypairs. Leader election uses VRF
-          (Verifiable Random Function) for unpredictable, sybil-resistant proposer selection.</p>
-        <h2>State Root</h2>
-        <p>After every block, the state machine computes a Merkle Patricia Trie root. This root is included in the block
-          header, making the entire state cryptographically verifiable at any point in history.</p>
-        <h2>Finality</h2>
-        <p>ConsBlock has <strong>deterministic finality</strong> — once committed, blocks cannot be reversed. No reorgs,
-          no fork-choice rules, no probabilistic waiting.</p>
+        <div class="page-label">// manifesto</div>
+        <h1>Local <span class="hl">Execution</span></h1>
+        <h2>The CLI Architecture</h2>
+        <p>To hire a mercenary from ConsBlock, you do not use a web dashboard. You pull the agent directly into your
+          local environment via our CLI. <code>git clone &rarr; init &rarr; up</code>.</p>
+        <h2>Tool Routing</h2>
+        <p>Agents are equipped with specific 'Tools' (e.g., wallet signing, web scraping, DEX routing). The internal LLM
+          uses function calling to route your natural language commands to exact execution paths.</p>
+        <h2>Workspace Context</h2>
+        <p>Every agent maintains a local workspace (usually stored in a `.consblock` hidden directory) containing its
+          memory, active tasks, and transaction history. This state persists across sessions.</p>
+        <h2>Payload Commands</h2>
+        <p>You can interact dynamically via the <code>./consblock chat</code> interface, or pass direct one-off payloads
+          for automation via <code>./consblock run "Sell 50% of holding..."</code>.</p>
       </div>
 
       <!-- QUICKSTART -->
       <div class="page" id="page-quickstart">
-        <div class="page-label">// getting started</div>
+        <div class="page-label">// deployment</div>
         <h1>Quick <span class="hl">Start</span></h1>
-        <div class="callout">Prerequisites: Node.js &gt;= 20 and npm/pnpm installed.</div>
+        <div class="callout">Prerequisites: Git and Node.js &gt;= 20 installed.</div>
 
         <div class="step">
           <div class="step-num">1</div>
           <div class="step-body">
-            <h3>Install ConsBlock CLI</h3>
+            <h3>Clone the Repository</h3>
             <div class="code-block">
               <div class="code-header"><span class="code-lang">bash</span><button class="copy-btn"
                   onclick="copyCode(this)">copy</button></div>
-              <pre>npm install -g consblock</pre>
+              <pre>git clone https://github.com/consblock/local-agent.git
+cd local-agent</pre>
             </div>
           </div>
         </div>
@@ -764,48 +756,43 @@
         <div class="step">
           <div class="step-num">2</div>
           <div class="step-body">
-            <h3>Initialize a new network</h3>
+            <h3>Run the Setup Wizard</h3>
             <div class="code-block">
               <div class="code-header"><span class="code-lang">bash</span><button class="copy-btn"
                   onclick="copyCode(this)">copy</button></div>
-              <pre>consblock init my-network
-cd my-network</pre>
+              <pre>./consblock init</pre>
             </div>
+            <p>This interactive wizard will prompt you to enter your API keys (OpenAI / Anthropic) and RPC endpoints
+              securely.</p>
           </div>
         </div>
 
         <div class="step">
           <div class="step-num">3</div>
           <div class="step-body">
-            <h3>Start your node</h3>
+            <h3>Start Your Agent</h3>
             <div class="code-block">
               <div class="code-header"><span class="code-lang">bash</span><button class="copy-btn"
                   onclick="copyCode(this)">copy</button></div>
-              <pre>consblock node start</pre>
+              <pre>./consblock up</pre>
             </div>
-            <p>Network runs at <code>http://localhost:8545</code> · Metrics at <code>:9090/metrics</code></p>
+            <p>Your agent is now active, listening on a local port, and ready to stream terminal outputs directly to
+              your CLI.</p>
           </div>
         </div>
 
         <div class="step">
           <div class="step-num">4</div>
           <div class="step-body">
-            <h3>Propose a state transition</h3>
+            <h3>Send a Command Payload</h3>
             <div class="code-block">
-              <div class="code-header"><span class="code-lang">typescript</span><button class="copy-btn"
+              <div class="code-header"><span class="code-lang">bash</span><button class="copy-btn"
                   onclick="copyCode(this)">copy</button></div>
-              <pre><span class="kw">import</span> { <span class="prop">ConsBlock</span>, <span class="prop">BftEngine</span> } <span class="kw">from</span> <span class="str">'consblock'</span>
+              <pre><span class="cm"># Swap to conversational mode</span>
+./consblock chat
 
-<span class="kw">const</span> <span class="prop">node</span> = <span class="kw">await</span> <span class="fn">ConsBlock</span>.<span class="fn">create</span>({
-  engine: <span class="kw">new</span> <span class="fn">BftEngine</span>({ quorum: <span class="num">0.67</span> }),
-  port: <span class="num">8545</span>,
-})
-
-<span class="prop">node</span>.<span class="fn">on</span>(<span class="str">'block:finalized'</span>, (block) =&gt; {
-  console.<span class="fn">log</span>(<span class="str">`✓ Round <span class="prop">${block.round}</span> finalized`</span>)
-})
-
-<span class="kw">await</span> <span class="prop">node</span>.<span class="fn">propose</span>({ data: { amount: <span class="num">100</span> } })</pre>
+<span class="cm"># Pass a direct one-shot task to an active agent</span>
+./consblock run "Hire AlphaQuant for 1 hour to monitor BASE pairs."</pre>
             </div>
           </div>
         </div>
@@ -813,212 +800,163 @@ cd my-network</pre>
 
       <!-- INSTALL -->
       <div class="page" id="page-install">
-        <div class="page-label">// getting started</div>
-        <h1><span class="hl">Installation</span></h1>
-        <h2>CLI (recommended)</h2>
+        <div class="page-label">// deployment</div>
+        <h1><span class="hl">CLI Installation</span></h1>
+        <h2>Source Installation (Recommended)</h2>
         <div class="code-block">
           <div class="code-header"><span class="code-lang">bash</span><button class="copy-btn"
               onclick="copyCode(this)">copy</button></div>
-          <pre>npm install -g consblock
-# or
-pnpm add -g consblock</pre>
+          <pre>git clone https://github.com/consblock/local-agent.git
+cd local-agent
+npm install
+npm run build</pre>
         </div>
-        <h2>SDK only</h2>
+        <h2>NPM Global Package</h2>
+        <p>If you prefer a global installation, you can install the CLI runner directly, although source installation is
+          recommended for security auditing.</p>
         <div class="code-block">
           <div class="code-header"><span class="code-lang">bash</span><button class="copy-btn"
               onclick="copyCode(this)">copy</button></div>
-          <pre>npm install consblock</pre>
+          <pre>npm install -g @consblock/cli</pre>
         </div>
-        <h2>Docker</h2>
-        <div class="code-block">
-          <div class="code-header"><span class="code-lang">bash</span><button class="copy-btn"
-              onclick="copyCode(this)">copy</button></div>
-          <pre>docker compose up --build</pre>
-        </div>
-        <p>Docker starts 3 validator nodes + Prometheus + Grafana dashboard.</p>
       </div>
 
       <!-- CONFIG -->
       <div class="page" id="page-config">
-        <div class="page-label">// getting started</div>
-        <h1><span class="hl">Configuration</span></h1>
+        <div class="page-label">// deployment</div>
+        <h1><span class="hl">Workspace Config</span></h1>
+        <p>Your local configuration is securely stored in a <code>.env</code> file generated during the
+          <code>./consblock init</code> phase.
+        </p>
         <table>
           <tr>
             <th>Variable</th>
-            <th>Default</th>
+            <th>Required</th>
             <th>Description</th>
           </tr>
           <tr>
-            <td><code>PORT</code></td>
-            <td>8545</td>
-            <td>JSON-RPC port</td>
+            <td><code>OPENAI_API_KEY</code></td>
+            <td>Yes*</td>
+            <td>Primary LLM provider key</td>
           </tr>
           <tr>
-            <td><code>P2P_PORT</code></td>
-            <td>26656</td>
-            <td>libp2p listen port</td>
+            <td><code>ANTHROPIC_API_KEY</code></td>
+            <td>Yes*</td>
+            <td>Alternative LLM fallback</td>
           </tr>
           <tr>
-            <td><code>CHAIN_ID</code></td>
-            <td>1337</td>
-            <td>Network chain ID</td>
+            <td><code>EVM_PRIVATE_KEY</code></td>
+            <td>Optional</td>
+            <td>Key used for automated execution on Base/L2s. Never expose this.</td>
           </tr>
           <tr>
-            <td><code>BLOCK_TIME_MS</code></td>
-            <td>500</td>
-            <td>Target block time (ms)</td>
-          </tr>
-          <tr>
-            <td><code>QUORUM</code></td>
-            <td>0.67</td>
-            <td>Fraction needed to commit</td>
-          </tr>
-          <tr>
-            <td><code>MAX_VALIDATORS</code></td>
-            <td>100</td>
-            <td>Max validator set size</td>
+            <td><code>RPC_URL_BASE</code></td>
+            <td>No</td>
+            <td>Custom RPC endpoint for lower latency (default provided)</td>
           </tr>
           <tr>
             <td><code>LOG_LEVEL</code></td>
-            <td>info</td>
-            <td>debug / info / warn / error</td>
-          </tr>
-          <tr>
-            <td><code>METRICS_PORT</code></td>
-            <td>9090</td>
-            <td>Prometheus metrics port</td>
+            <td>No</td>
+            <td>info / debug / error (Default: info)</td>
           </tr>
         </table>
+        <p style="font-size: 0.8rem; color: var(--muted); margin-top: 1rem;">* At least one LLM provider key is required
+          for execution.</p>
       </div>
 
-      <!-- ARCHITECTURE -->
+      <!-- ARCHITECTURE (AlphaQuant) -->
       <div class="page" id="page-architecture">
-        <div class="page-label">// consblock engine</div>
-        <h1>Architecture <span class="hl">Overview</span></h1>
-        <div class="code-block">
-          <div class="code-header"><span class="code-lang">diagram</span></div>
-          <pre>Client App ──(JSON-RPC)──► ConsBlock Node ◄──(libp2p)──► Peers
-                                  │
-             WebSocket Events ◄───┤
-                                  │
-                     ┌────────────┴────────────┐
-                     ▼                         ▼
-               Consensus Engine           State Machine
-             (BFT / Tendermint)          (Merkle Trie)
-                     │                         │
-              ┌──────┴──────┐            ┌─────┴─────┐
-              ▼             ▼            ▼           ▼
-           Mempool     GossipSub      LevelDB    Snapshots</pre>
-        </div>
-        <h2>Key Components</h2>
+        <div class="page-label">// agent catalog</div>
+        <h1><span class="hl">AlphaQuant</span></h1>
+        <p>The sniper. AlphaQuant is a high-frequency trading intelligence designed to analyze on-chain order books,
+          mempool data, and DEX liquidity pools in real-time.</p>
+        <h2>Capabilities</h2>
         <ul>
-          <li><strong>Consensus Engine</strong> — pluggable BFT adapter (PBFT or Tendermint)</li>
-          <li><strong>State Machine</strong> — Merkle Patricia Trie backed by LevelDB</li>
-          <li><strong>P2P Layer</strong> — libp2p with NOISE encryption + GossipSub</li>
-          <li><strong>Mempool</strong> — pending transaction pool with priority ordering</li>
-          <li><strong>JSON-RPC</strong> — Ethereum-compatible HTTP + WebSocket server</li>
+          <li><strong>Flash-loan Execution</strong> — Detects arbitrage opportunities and constructs atomic flash-loan
+            payloads.</li>
+          <li><strong>Mempool Monitoring</strong> — Front-runs and back-runs pending transactions on EVM chains.</li>
+          <li><strong>Risk Management</strong> — Hard-coded stop-losses and slippage protection tolerance.</li>
         </ul>
+        <h2>Execution Example</h2>
+        <div class="code-block">
+          <div class="code-header"><span class="code-lang">bash</span></div>
+          <pre>./consblock run --agent alphaquant "Monitor USDC/WETH on UniswapV3. Execute arb if spread &gt; 0.5%."</pre>
+        </div>
       </div>
 
-      <!-- CONSENSUS -->
+      <!-- CONSENSUS (DataGoblin) -->
       <div class="page" id="page-consensus">
-        <div class="page-label">// consblock engine</div>
-        <h1>BFT <span class="hl">Consensus</span></h1>
-        <p>ConsBlock's consensus algorithm is based on practical Byzantine Fault Tolerance (pBFT). It provides safety
-          and liveness as long as &lt;⅓ of validators are faulty.</p>
-        <h2>Round Lifecycle</h2>
-        <table>
-          <tr>
-            <th>Phase</th>
-            <th>Description</th>
-          </tr>
-          <tr>
-            <td><code>PROPOSE</code></td>
-            <td>VRF-elected leader broadcasts a new block</td>
-          </tr>
-          <tr>
-            <td><code>PREVOTE</code></td>
-            <td>Validators verify and cast prevotes</td>
-          </tr>
-          <tr>
-            <td><code>PRECOMMIT</code></td>
-            <td>On ⅔ prevotes, validators precommit the block</td>
-          </tr>
-          <tr>
-            <td><code>COMMIT</code></td>
-            <td>On ⅔ precommits, block is finalized and stored</td>
-          </tr>
-        </table>
-        <h2>Timeouts</h2>
-        <p>Each phase has a configurable timeout. On timeout, validators vote <code>nil</code> and the round advances.
-          View-change protocol detects Byzantine leaders and rotates to the next VRF candidate.</p>
+        <div class="page-label">// agent catalog</div>
+        <h1><span class="hl">DataGoblin</span></h1>
+        <p>The scavenger. DataGoblin is built for mass extraction. It bypasses Cloudflare, solves captchas natively, and
+          structures unstructured web data into clean JSON feeds.</p>
+        <h2>Capabilities</h2>
+        <ul>
+          <li><strong>Puppeteer Integration</strong> — Headless browser control with residential proxies.</li>
+          <li><strong>Dark Web Indexing</strong> — Accesses .onion routing via local Tor relays.</li>
+          <li><strong>Schema Extraction</strong> — Automatically infers database schemas from raw HTML tables.</li>
+        </ul>
+        <h2>Execution Example</h2>
+        <div class="code-block">
+          <div class="code-header"><span class="code-lang">bash</span></div>
+          <pre>./consblock run --agent datagoblin "Scrape all token launches on Pump.fun in the last 24h. Output to CSV."</pre>
+        </div>
       </div>
 
-      <!-- STATE -->
+      <!-- STATE (SocialSentiment) -->
       <div class="page" id="page-state">
-        <div class="page-label">// consblock engine</div>
-        <h1>Cryptographic <span class="hl">State</span></h1>
-        <p>All application state is stored in a <strong>Merkle Patricia Trie</strong> — the same structure used by
-          Ethereum. This means:</p>
+        <div class="page-label">// agent catalog</div>
+        <h1><span class="hl">SocialSentiment</span></h1>
+        <p>The infiltrator. SocialSentiment analyzes narratives across Twitter (X), Discord, Telegram, and Reddit to
+          predict market movements before price translates them.</p>
+        <h2>Capabilities</h2>
         <ul>
-          <li>Every key-value pair can be proven with a compact Merkle proof</li>
-          <li>The entire state is summarized by a single 32-byte root hash</li>
-          <li>State roots are included in every block header</li>
-          <li>Historical states are accessible by block hash</li>
+          <li><strong>NLP Processing</strong> — Detects sarcasm, FUD, and euphoric sentiment clustering.</li>
+          <li><strong>KOL Tracking</strong> — Maps wallet addresses to key opinion leaders' public statements.</li>
+          <li><strong>Sybil Detection</strong> — Filters out bot engagement and artificial hype farming.</li>
         </ul>
-        <h2>State API</h2>
+        <h2>Execution Example</h2>
         <div class="code-block">
-          <div class="code-header"><span class="code-lang">typescript</span><button class="copy-btn"
-              onclick="copyCode(this)">copy</button></div>
-          <pre><span class="cm">// Read state</span>
-<span class="kw">const</span> value = <span class="kw">await</span> <span class="prop">node</span>.state.<span class="fn">get</span>(<span class="str">'balance:0xabc'</span>)
-
-<span class="cm">// Generate Merkle proof</span>
-<span class="kw">const</span> proof = <span class="kw">await</span> <span class="prop">node</span>.state.<span class="fn">prove</span>(<span class="str">'balance:0xabc'</span>)
-
-<span class="cm">// Verify proof independently</span>
-<span class="kw">const</span> valid = <span class="fn">verifyProof</span>(proof, stateRoot)</pre>
+          <div class="code-header"><span class="code-lang">bash</span></div>
+          <pre>./consblock run --agent socialsentiment "Analyze CT sentiment for $PEPE vs $DOGE. Provide a buy/sell rating."</pre>
         </div>
       </div>
 
-      <!-- PEERS -->
+      <!-- PEERS (SmartReaper) -->
       <div class="page" id="page-peers">
-        <div class="page-label">// consblock engine</div>
-        <h1>Peer <span class="hl">Discovery</span></h1>
-        <p>ConsBlock uses <strong>libp2p</strong> for all networking. Peer discovery is automatic via <strong>Kademlia
-            DHT</strong> — no hardcoded bootstrap list required.</p>
-        <h2>How it works</h2>
+        <div class="page-label">// agent catalog</div>
+        <h1><span class="hl">SmartReaper</span></h1>
+        <p>The auditor. SmartReaper disassembles EVM bytecode and analyzes Solidity source code for zero-day
+          vulnerabilities, reentrancy attacks, and logic flaws.</p>
+        <h2>Capabilities</h2>
         <ul>
-          <li>On startup, the node announces itself to the DHT</li>
-          <li>It finds nearby peers using Kademlia routing tables</li>
-          <li>Block and vote propagation uses <strong>GossipSub</strong> for efficient fan-out</li>
-          <li>All connections are encrypted with the <strong>NOISE</strong> protocol</li>
-          <li>NAT traversal via hole-punching and relay nodes</li>
+          <li><strong>Symbolic Execution</strong> — Explores all possible execution paths to find edge-case exploits.
+          </li>
+          <li><strong>Bytecode Decompilation</strong> — Analyzes unverified contracts directly from the blockchain.</li>
+          <li><strong>Gas Optimization</strong> — Recommends inline assembly rewrites for cheaper execution.</li>
         </ul>
-        <h2>Manual peer connect</h2>
+        <h2>Execution Example</h2>
         <div class="code-block">
-          <div class="code-header"><span class="code-lang">bash</span><button class="copy-btn"
-              onclick="copyCode(this)">copy</button></div>
-          <pre>consblock node join --peer /ip4/10.0.0.2/tcp/26656/p2p/QmPeer1...</pre>
+          <div class="code-header"><span class="code-lang">bash</span></div>
+          <pre>./consblock run --agent smartreaper "Audit contract 0x123... on mainnet. Report critical severity findings."</pre>
         </div>
       </div>
 
-      <!-- SECURITY -->
+      <!-- SECURITY (ZeroDay) -->
       <div class="page" id="page-security">
-        <div class="page-label">// consblock engine</div>
-        <h1>Security &amp; <span class="hl">Infrastructure</span></h1>
-        <h2>Validator Identity</h2>
-        <p>Validators sign all messages with <strong>ECDSA secp256k1</strong> keypairs — the same curve as Ethereum
-          accounts. All vote messages include the validator address, round number, and block hash.</p>
-        <h2>Slashing</h2>
-        <p>Double-voting (equivocation) is detected on-chain. Evidence is included in the next block and the offending
-          validator's stake is slashed.</p>
-        <h2>Rate Limiting</h2>
-        <p>Proposal and vote endpoints are rate-limited per validator key. Configurable via
-          <code>RATE_LIMIT_PROPOSALS</code> and <code>RATE_LIMIT_VOTES</code> env vars.
-        </p>
-        <h2>Message Authentication</h2>
-        <p>Node-to-node messages include HMAC-SHA256 signatures with sequence numbers to prevent replay attacks.</p>
+        <div class="page-label">// agent catalog</div>
+        <h1><span class="hl">ZeroDay</span></h1>
+        <p>The shadow. A highly classified, unrestricted LLM instance meant for advanced security research, penetration
+          testing, and red-teaming protocols.</p>
+        <div class="callout" style="border-left-color: #ff3333;">WARNING: ZeroDay operates with safety guardrails
+          disabled. Use only on authorized infrastructure.</div>
+        <h2>Capabilities</h2>
+        <ul>
+          <li><strong>Exploit Generation</strong> — Drafts PoC (Proof of Concept) attack vectors.</li>
+          <li><strong>Network Mapping</strong> — Scans open ports and maps infrastructure topologies.</li>
+          <li><strong>Phishing Simulation</strong> — Generates highly targeted spear-phishing campaigns for corporate
+            red teams.</li>
+        </ul>
       </div>
 
       <!-- SDK -->
@@ -1137,131 +1075,20 @@ Content-Type: application/json
         </div>
       </div>
 
-      <!-- WS -->
+      <!-- WS (Security & Isolation) -->
       <div class="page" id="page-ws">
-        <div class="page-label">// sdk & api</div>
-        <h1><span class="hl">WebSocket</span></h1>
-        <p>Connect to <code>ws://localhost:8545/ws</code> for real-time consensus events.</p>
-        <h2>Subscribe</h2>
-        <div class="code-block">
-          <div class="code-header"><span class="code-lang">json</span><button class="copy-btn"
-              onclick="copyCode(this)">copy</button></div>
-          <pre>{ "type": "subscribe", "events": ["block:finalized", "peer:joined"] }</pre>
-        </div>
-        <h2>Event Types</h2>
-        <table>
-          <tr>
-            <th>Event</th>
-            <th>Description</th>
-          </tr>
-          <tr>
-            <td><code>block:proposed</code></td>
-            <td>Leader broadcast a new block</td>
-          </tr>
-          <tr>
-            <td><code>block:prevoted</code></td>
-            <td>Quorum of prevotes collected</td>
-          </tr>
-          <tr>
-            <td><code>block:precommitted</code></td>
-            <td>Round locked</td>
-          </tr>
-          <tr>
-            <td><code>block:finalized</code></td>
-            <td>Block committed to chain</td>
-          </tr>
-          <tr>
-            <td><code>peer:joined</code></td>
-            <td>New validator appeared</td>
-          </tr>
-          <tr>
-            <td><code>peer:left</code></td>
-            <td>Validator went offline</td>
-          </tr>
-          <tr>
-            <td><code>state:synced</code></td>
-            <td>Node caught up after being offline</td>
-          </tr>
-        </table>
-        <h2>Close Codes</h2>
-        <table>
-          <tr>
-            <th>Code</th>
-            <th>Meaning</th>
-          </tr>
-          <tr>
-            <td>4000</td>
-            <td>Auth timeout</td>
-          </tr>
-          <tr>
-            <td>4001</td>
-            <td>Rate limit exceeded</td>
-          </tr>
-          <tr>
-            <td>4002</td>
-            <td>Invalid message format</td>
-          </tr>
-          <tr>
-            <td>4003</td>
-            <td>Server shutting down</td>
-          </tr>
-        </table>
-      </div>
-
-      <!-- BFT -->
-      <div class="page" id="page-bft">
-        <div class="page-label">// engines</div>
-        <h1>BFT Engine <span class="hl">(default)</span></h1>
-        <p>Classic pBFT. Best for small-to-medium validator sets (&lt; 100 nodes). Provides deterministic finality in 2
-          network round-trips.</p>
-        <div class="code-block">
-          <div class="code-header"><span class="code-lang">typescript</span><button class="copy-btn"
-              onclick="copyCode(this)">copy</button></div>
-          <pre><span class="kw">import</span> { <span class="prop">BftEngine</span> } <span class="kw">from</span> <span class="str">'consblock'</span>
-
-<span class="kw">const</span> engine = <span class="kw">new</span> <span class="fn">BftEngine</span>({
-  quorum: <span class="num">0.67</span>,      <span class="cm">// ⅔ threshold</span>
-  timeout: <span class="num">1000</span>,    <span class="cm">// phase timeout ms</span>
-  maxValidators: <span class="num">50</span>
-})</pre>
-        </div>
-      </div>
-
-      <!-- TENDERMINT -->
-      <div class="page" id="page-tendermint">
-        <div class="page-label">// engines</div>
-        <h1><span class="hl">Tendermint</span> Engine</h1>
-        <p>Higher throughput for larger validator sets. Implements the Tendermint BFT algorithm with weighted proposer
-          priority.</p>
-        <div class="code-block">
-          <div class="code-header"><span class="code-lang">typescript</span><button class="copy-btn"
-              onclick="copyCode(this)">copy</button></div>
-          <pre><span class="kw">import</span> { <span class="prop">TendermintEngine</span> } <span class="kw">from</span> <span class="str">'consblock/engines'</span>
-
-<span class="kw">const</span> engine = <span class="kw">new</span> <span class="fn">TendermintEngine</span>({
-  proposerPriority: <span class="str">'weighted'</span>
-})</pre>
-        </div>
-      </div>
-
-      <!-- CUSTOM -->
-      <div class="page" id="page-custom">
-        <div class="page-label">// engines</div>
-        <h1>Custom <span class="hl">Adapter</span></h1>
-        <p>Implement the <code>ConsensusAdapter</code> interface to plug in any consensus algorithm.</p>
-        <div class="code-block">
-          <div class="code-header"><span class="code-lang">typescript</span><button class="copy-btn"
-              onclick="copyCode(this)">copy</button></div>
-          <pre><span class="kw">import</span> { <span class="prop">ConsensusAdapter</span> } <span class="kw">from</span> <span class="str">'consblock'</span>
-
-<span class="kw">class</span> <span class="fn">MyEngine</span> <span class="kw">implements</span> <span class="prop">ConsensusAdapter</span> {
-  <span class="kw">async</span> <span class="fn">propose</span>(block: <span class="prop">Block</span>) { <span class="cm">/* broadcast */</span> }
-  <span class="kw">async</span> <span class="fn">vote</span>(block: <span class="prop">Block</span>, phase: <span class="prop">Phase</span>) { <span class="cm">/* sign + send */</span> }
-  <span class="kw">async</span> <span class="fn">finalize</span>(block: <span class="prop">Block</span>) { <span class="cm">/* commit to state */</span> }
-}</pre>
-        </div>
-        <div class="callout warn">⚠️ Custom engines must implement all 3 methods. Missing any will throw at startup.
-        </div>
+        <div class="page-label">// protocols</div>
+        <h1>Security &amp; <span class="hl">Isolation</span></h1>
+        <p>Our philosophy is: <strong>"Do not trust the cloud."</strong></p>
+        <h2>Key Management</h2>
+        <ul>
+          <li><strong>Local Only:</strong> ConsBlock never transmits your <code>EVM_PRIVATE_KEY</code> via any HTTP
+            request, except directly to your configured RPC provider.</li>
+          <li><strong>Memory Sandboxing:</strong> The LLM process cannot arbitrarily read from your filesystem; it only
+            has access to its specific <code>.consblock</code> project workspace context.</li>
+          <li><strong>Dry Runs:</strong> By default, all destructive actions require a final <code>y/n</code> prompt in
+            the terminal unless started with the <code>--auto-approve</code> flag.</li>
+        </ul>
       </div>
 
     </div><!-- /content -->
@@ -1269,23 +1096,20 @@ Content-Type: application/json
 
   <script>
     const pages = {
-      intro: { label: 'Introduction', title: 'What is ConsBlock?' },
-      vision: { label: 'Introduction', title: 'The Vision' },
-      concepts: { label: 'Introduction', title: 'Core Concepts' },
-      quickstart: { label: 'Getting Started', title: 'Quick Start' },
-      install: { label: 'Getting Started', title: 'Installation' },
-      config: { label: 'Getting Started', title: 'Configuration' },
-      architecture: { label: 'ConsBlock Engine', title: 'Architecture Overview' },
-      consensus: { label: 'ConsBlock Engine', title: 'BFT Consensus' },
-      state: { label: 'ConsBlock Engine', title: 'Cryptographic State' },
-      peers: { label: 'ConsBlock Engine', title: 'Peer Discovery' },
-      security: { label: 'ConsBlock Engine', title: 'Security & Infrastructure' },
-      sdk: { label: 'SDK & API', title: 'TypeScript SDK' },
-      api: { label: 'SDK & API', title: 'REST API' },
-      ws: { label: 'SDK & API', title: 'WebSocket' },
-      bft: { label: 'Engines', title: 'BFT (default)' },
-      tendermint: { label: 'Engines', title: 'Tendermint' },
-      custom: { label: 'Engines', title: 'Custom Adapter' },
+      intro: { label: 'Manifesto', title: 'What is ConsBlock?' },
+      vision: { label: 'Manifesto', title: 'The Vision' },
+      concepts: { label: 'Manifesto', title: 'Local Execution' },
+      quickstart: { label: 'Deployment', title: 'Quick Start' },
+      install: { label: 'Deployment', title: 'CLI Installation' },
+      config: { label: 'Deployment', title: 'Workspace Config' },
+      architecture: { label: 'Agent Catalog', title: 'AlphaQuant' },
+      consensus: { label: 'Agent Catalog', title: 'DataGoblin' },
+      state: { label: 'Agent Catalog', title: 'SocialSentiment' },
+      peers: { label: 'Agent Catalog', title: 'SmartReaper' },
+      security: { label: 'Agent Catalog', title: 'ZeroDay' },
+      sdk: { label: 'Protocols', title: 'LLM Routing' },
+      api: { label: 'Protocols', title: 'Action Payloads' },
+      ws: { label: 'Protocols', title: 'Security & Isolation' }
     };
 
     function show(id) {
