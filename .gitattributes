@@ -1,0 +1,2 @@
+# Classify HTML files as documentation so GitHub detects JavaScript as primary language
+*.html linguist-documentation
