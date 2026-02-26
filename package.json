@@ -1,0 +1,41 @@
+{
+    "name": "@consblock/local-agent",
+    "version": "0.1.0-alpha",
+    "description": "AI Mercenary Marketplace — Deploy autonomous agents locally via CLI.",
+    "main": "src/index.js",
+    "bin": {
+        "consblock": "./bin/consblock.js"
+    },
+    "scripts": {
+        "start": "node bin/consblock.js up",
+        "dev": "node bin/consblock.js up --verbose",
+        "build": "echo 'Build complete.'",
+        "test": "node src/test.js"
+    },
+    "keywords": [
+        "ai",
+        "agent",
+        "llm",
+        "autonomous",
+        "defi",
+        "web3",
+        "cli",
+        "consblock"
+    ],
+    "author": "ConsBlock Core <core@consblock.fun>",
+    "license": "MIT",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/consblock/local-agent.git"
+    },
+    "engines": {
+        "node": ">=20.0.0"
+    },
+    "dependencies": {
+        "chalk": "^5.3.0",
+        "commander": "^12.0.0",
+        "dotenv": "^16.4.0",
+        "inquirer": "^9.2.0",
+        "ora": "^8.0.0"
+    }
+}

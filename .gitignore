@@ -12,3 +12,9 @@ Thumbs.db
 # Node (jika nanti pakai npm)
 node_modules/
 dist/
+
+node_modules/
+.env
+.consblock/
+*.log
+dist/
